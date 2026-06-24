@@ -1,0 +1,89 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Aumentar ROAS objetivo da campanha Leitura para 4,5x",
+      "desc": "Ajustar campanha existente para preservar histórico de aprendizado. Não criar campanha nova.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura (MLB64402148)",
+      "date": "2026-06-23",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-06-22"
+    },
+    {
+      "id": 2,
+      "title": "Repor estoque variação L-075 no Full com urgência",
+      "desc": "Grau mais visitado nos últimos 7 dias. Com 4 unidades no Full, o ML pode estar limitando exposição do anúncio.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura +0.75",
+      "date": "2026-06-23",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-06-22"
+    },
+    {
+      "id": 3,
+      "title": "Medir ACOS da campanha Leitura após ajuste de ROAS",
+      "desc": "Critério de sucesso: ACOS ≤ 25,3% com ≥ 15 vendas/semana. Critério de parada: ACOS > 30% após 7 dias.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura",
+      "date": "2026-06-30",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-06-22"
+    },
+    {
+      "id": 4,
+      "title": "Pesquisa de mercado — óculos de leitura (background)",
+      "desc": "Preços, capas dominantes, kits dos concorrentes. Inteligência para quando Vera precisar decidir.",
+      "agent": "Maya",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura",
+      "date": "2026-06-25",
+      "priority": "low",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-06-22"
+    }
+  ],
+  "contas": [
+    {
+      "id": 1,
+      "nome": "Bling ERP",
+      "tipo": "fixa",
+      "valor": 199,
+      "dia": 5,
+      "vence": "2026-07-05",
+      "obs": "Plano Crescimento",
+      "paga": false
+    },
+    {
+      "id": 2,
+      "nome": "Letzee",
+      "tipo": "fixa",
+      "valor": 97,
+      "dia": 10,
+      "vence": "2026-07-10",
+      "obs": "",
+      "paga": false
+    },
+    {
+      "id": 3,
+      "nome": "Claude Pro",
+      "tipo": "fixa",
+      "valor": 105,
+      "dia": 15,
+      "vence": "2026-07-15",
+      "obs": "",
+      "paga": false
+    }
+  ],
+  "lastUpdated": "2026-06-22"
+}

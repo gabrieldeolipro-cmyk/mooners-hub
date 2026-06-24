@@ -6,647 +6,185 @@
 <title>Mooners OS</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
   :root {
-    --bg: #0a0a0b;
-    --surface: #111113;
-    --surface2: #18181c;
-    --border: #232328;
-    --border2: #2e2e35;
-    --text: #f0f0f2;
-    --text2: #8888a0;
-    --text3: #55556a;
-    --accent: #c8f060;
-    --accent-dim: rgba(200,240,96,0.08);
-    --accent-dim2: rgba(200,240,96,0.15);
-    --red: #ff5a5a;
-    --red-dim: rgba(255,90,90,0.1);
-    --amber: #ffb340;
-    --amber-dim: rgba(255,179,64,0.1);
-    --blue: #60a8f0;
-    --blue-dim: rgba(96,168,240,0.1);
-    --purple: #b060f0;
-    --purple-dim: rgba(176,96,240,0.1);
-    --green: #40d090;
-    --green-dim: rgba(64,208,144,0.1);
+    --bg:#0a0a0b;--surface:#111113;--surface2:#18181c;--border:#232328;--border2:#2e2e35;
+    --text:#f0f0f2;--text2:#8888a0;--text3:#55556a;--accent:#c8f060;
+    --accent-dim:rgba(200,240,96,0.08);--accent-dim2:rgba(200,240,96,0.15);
+    --red:#ff5a5a;--red-dim:rgba(255,90,90,0.1);--amber:#ffb340;--amber-dim:rgba(255,179,64,0.1);
+    --blue:#60a8f0;--blue-dim:rgba(96,168,240,0.1);--purple:#b060f0;--purple-dim:rgba(176,96,240,0.1);
+    --green:#40d090;--green-dim:rgba(64,208,144,0.1);
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .layout { display: flex; min-height: 100vh; }
-
-  /* ── SIDEBAR ── */
-  .sidebar {
-    width: 220px;
-    min-width: 220px;
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    padding: 24px 0;
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    z-index: 10;
-    overflow-y: auto;
-  }
-
-  .logo {
-    padding: 0 20px 24px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 16px;
-  }
-
-  .logo-mark {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-
-  .logo-sub {
-    font-size: 10px;
-    color: var(--text3);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-
-  /* Module tabs */
-  .module-tabs {
-    display: flex;
-    gap: 6px;
-    padding: 0 14px 16px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 14px;
-  }
-
-  .module-tab {
-    flex: 1;
-    padding: 7px 4px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text3);
-    font-size: 11px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.15s;
-  }
-
-  .module-tab.active {
-    background: var(--accent-dim2);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .nav-label {
-    font-size: 10px;
-    color: var(--text3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0 20px;
-    margin-bottom: 4px;
-    margin-top: 12px;
-  }
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 20px;
-    cursor: pointer;
-    color: var(--text2);
-    font-size: 13px;
-    font-weight: 500;
-    border-left: 2px solid transparent;
-    transition: all 0.15s;
-    user-select: none;
-  }
-
-  .nav-item:hover { color: var(--text); background: var(--surface2); }
-  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-dim); }
-
-  .nav-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-
-  .nav-badge {
-    margin-left: auto;
-    background: var(--surface2);
-    border: 1px solid var(--border2);
-    color: var(--text2);
-    font-size: 10px;
-    padding: 1px 6px;
-    border-radius: 10px;
-  }
-
-  .nav-badge.urgent { background: var(--red-dim); border-color: var(--red); color: var(--red); }
-  .nav-badge.warn { background: var(--amber-dim); border-color: var(--amber); color: var(--amber); }
-
-  /* ── MAIN ── */
-  .main { margin-left: 220px; flex: 1; display: flex; flex-direction: column; }
-
-  .topbar {
-    padding: 20px 32px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg);
-    position: sticky;
-    top: 0;
-    z-index: 5;
-  }
-
-  .topbar-left { display: flex; flex-direction: column; gap: 2px; }
-
-  .topbar-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .topbar-date { font-size: 12px; color: var(--text3); }
-
-  .btn-add {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: #0a0a0b;
-    border: none;
-    border-radius: 8px;
-    padding: 9px 16px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.15s;
-  }
-
-  .btn-add:hover { opacity: 0.85; }
-
-  .content { padding: 28px 32px; flex: 1; }
-
-  /* ── PAGE SECTIONS ── */
-  .page { display: none; }
-  .page.active { display: block; }
-
-  /* ── STATS ── */
-  .stats-grid {
-    display: grid;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  .stats-grid.cols4 { grid-template-columns: repeat(4, 1fr); }
-  .stats-grid.cols3 { grid-template-columns: repeat(3, 1fr); }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 18px;
-  }
-
-  .stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-
-  .stat-value {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .stat-value.red { color: var(--red); }
-  .stat-value.amber { color: var(--amber); }
-  .stat-value.accent { color: var(--accent); }
-  .stat-value.text2 { color: var(--text2); }
-  .stat-sub { font-size: 11px; color: var(--text3); margin-top: 4px; }
-
-  /* ── SECTION HEADER ── */
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 14px;
-  }
-
-  .section-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .section-title::before {
-    content: '';
-    width: 3px; height: 14px;
-    border-radius: 2px;
-    background: var(--accent);
-  }
-
-  .filter-row { display: flex; gap: 6px; }
-
-  .filter-btn {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text2);
-    border-radius: 6px;
-    padding: 5px 12px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .filter-btn:hover { border-color: var(--border2); color: var(--text); }
-  .filter-btn.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
-
-  /* ── TASK CARD ── */
-  .task-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
-
-  .task-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 18px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    transition: border-color 0.15s;
-  }
-
-  .task-card:hover { border-color: var(--border2); }
-  .task-card.done { opacity: 0.4; }
-  .task-card.done .task-title { text-decoration: line-through; }
-
-  .task-check {
-    width: 18px; height: 18px;
-    border-radius: 5px;
-    border: 1.5px solid var(--border2);
-    flex-shrink: 0;
-    margin-top: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .task-check:hover { border-color: var(--accent); }
-  .task-check.checked { background: var(--accent); border-color: var(--accent); }
-  .task-check.checked::after { content: '✓'; font-size: 11px; color: #0a0a0b; font-weight: 700; }
-
-  .task-body { flex: 1; min-width: 0; }
-
-  .task-meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 5px;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-  }
-
-  .tag-canal { background: var(--blue-dim); color: var(--blue); }
-  .tag-anuncio { background: var(--accent-dim2); color: var(--accent); }
-  .tag-urgent { background: var(--red-dim); color: var(--red); }
-  .tag-ok { background: var(--green-dim); color: var(--green); }
-  .tag-pending { background: var(--amber-dim); color: var(--amber); }
-  .tag-waiting { background: var(--purple-dim); color: var(--purple); }
-
-  .task-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-  .task-desc { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 8px; }
-
-  .task-footer { display: flex; align-items: center; gap: 12px; }
-
-  .task-date { font-size: 11px; color: var(--text3); display: flex; align-items: center; gap: 4px; }
-  .task-date.overdue { color: var(--red); font-weight: 600; }
-  .task-date.today { color: var(--amber); font-weight: 600; }
-  .task-date.soon { color: var(--accent); }
-
-  .task-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-
-  .priority-dot { width: 8px; height: 8px; border-radius: 50%; }
-
-  /* ── CONTA CARD ── */
-  .conta-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    transition: border-color 0.15s;
-    margin-bottom: 8px;
-  }
-
-  .conta-card:hover { border-color: var(--border2); }
-  .conta-card.paga { opacity: 0.4; }
-  .conta-card.paga .conta-nome { text-decoration: line-through; }
-
-  .conta-check {
-    width: 18px; height: 18px;
-    border-radius: 5px;
-    border: 1.5px solid var(--border2);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .conta-check:hover { border-color: var(--green); }
-  .conta-check.checked { background: var(--green); border-color: var(--green); }
-  .conta-check.checked::after { content: '✓'; font-size: 11px; color: #0a0a0b; font-weight: 700; }
-
-  .conta-body { flex: 1; }
-
-  .conta-top { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
-
-  .conta-nome { font-size: 14px; font-weight: 500; color: var(--text); }
-
-  .conta-tipo {
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .tipo-fixa { background: var(--blue-dim); color: var(--blue); }
-  .tipo-variavel { background: var(--purple-dim); color: var(--purple); }
-  .tipo-avulsa { background: var(--amber-dim); color: var(--amber); }
-
-  .conta-vence { font-size: 12px; color: var(--text3); }
-  .conta-vence.overdue { color: var(--red); font-weight: 600; }
-  .conta-vence.today { color: var(--amber); font-weight: 600; }
-  .conta-vence.soon { color: var(--accent); }
-
-  .conta-valor {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    flex-shrink: 0;
-    text-align: right;
-  }
-
-  .conta-valor.variavel { color: var(--text2); font-size: 13px; }
-
-  .conta-del {
-    background: none;
-    border: none;
-    color: var(--text3);
-    cursor: pointer;
-    font-size: 16px;
-    padding: 4px;
-    border-radius: 4px;
-    transition: all 0.15s;
-    flex-shrink: 0;
-  }
-
-  .conta-del:hover { color: var(--red); background: var(--red-dim); }
-
-  /* ── MODAL ── */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(4px);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-  }
-
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-  .modal {
-    background: var(--surface);
-    border: 1px solid var(--border2);
-    border-radius: 16px;
-    padding: 28px;
-    width: 560px;
-    max-width: 95vw;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: translateY(12px);
-    transition: transform 0.2s;
-  }
-
-  .modal-overlay.open .modal { transform: translateY(0); }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-  }
-
-  .modal-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-  }
-
-  .modal-close {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text2);
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-  }
-
-  .modal-close:hover { color: var(--text); border-color: var(--border2); }
-
-  .form-group { margin-bottom: 16px; }
-
-  .form-label {
-    display: block;
-    font-size: 11px;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
-
-  .form-input, .form-select, .form-textarea {
-    width: 100%;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    padding: 10px 12px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
-  .form-textarea { resize: vertical; min-height: 72px; }
-  .form-select option { background: var(--surface2); }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-  .form-hint { font-size: 11px; color: var(--text3); margin-top: 4px; }
-
-  .btn-save {
-    width: 100%;
-    background: var(--accent);
-    color: #0a0a0b;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: opacity 0.15s;
-  }
-
-  .btn-save:hover { opacity: 0.85; }
-
-  .empty { text-align: center; padding: 40px 20px; color: var(--text3); font-size: 13px; }
-  .empty-icon { font-size: 32px; margin-bottom: 8px; }
-
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-
-  @media (max-width: 768px) {
-    .sidebar { display: none; }
-    .main { margin-left: 0; }
-    .stats-grid.cols4 { grid-template-columns: 1fr 1fr; }
-    .stats-grid.cols3 { grid-template-columns: 1fr 1fr 1fr; }
-    .content { padding: 20px 16px; }
-    .topbar { padding: 16px; }
-  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;font-size:14px;line-height:1.5;}
+  .layout{display:flex;min-height:100vh;}
+  .sidebar{width:220px;min-width:220px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:24px 0;position:fixed;top:0;left:0;bottom:0;z-index:10;overflow-y:auto;}
+  .logo{padding:0 20px 24px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+  .logo-mark{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--accent);letter-spacing:-0.5px;}
+  .logo-sub{font-size:10px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+  .module-tabs{display:flex;gap:6px;padding:0 14px 16px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+  .module-tab{flex:1;padding:7px 4px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;text-align:center;transition:all .15s;}
+  .module-tab.active{background:var(--accent-dim2);border-color:var(--accent);color:var(--accent);}
+  .nav-label{font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;padding:0 20px;margin-bottom:4px;margin-top:12px;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:8px 20px;cursor:pointer;color:var(--text2);font-size:13px;font-weight:500;border-left:2px solid transparent;transition:all .15s;user-select:none;}
+  .nav-item:hover{color:var(--text);background:var(--surface2);}
+  .nav-item.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-dim);}
+  .nav-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .nav-badge{margin-left:auto;background:var(--surface2);border:1px solid var(--border2);color:var(--text2);font-size:10px;padding:1px 6px;border-radius:10px;}
+  .nav-badge.urgent{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+  .main{margin-left:220px;flex:1;display:flex;flex-direction:column;}
+  .topbar{padding:20px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg);position:sticky;top:0;z-index:5;}
+  .topbar-left{display:flex;flex-direction:column;gap:2px;}
+  .topbar-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;}
+  .topbar-date{font-size:12px;color:var(--text3);}
+  .btn-add{display:flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0b;border:none;border-radius:8px;padding:9px 16px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s;}
+  .btn-add:hover{opacity:.85;}
+  .content{padding:28px 32px;flex:1;}
+  .page{display:none;}
+  .page.active{display:block;}
+  .stats-grid{display:grid;gap:12px;margin-bottom:28px;}
+  .stats-grid.cols4{grid-template-columns:repeat(4,1fr);}
+  .stats-grid.cols3{grid-template-columns:repeat(3,1fr);}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+  .stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+  .stat-value{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;line-height:1;}
+  .stat-value.red{color:var(--red);}
+  .stat-value.amber{color:var(--amber);}
+  .stat-value.accent{color:var(--accent);}
+  .stat-value.text2{color:var(--text2);}
+  .stat-sub{font-size:11px;color:var(--text3);margin-top:4px;}
+  .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .section-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:8px;}
+  .section-title::before{content:'';width:3px;height:14px;border-radius:2px;background:var(--accent);}
+  .filter-row{display:flex;gap:6px;}
+  .filter-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
+  .filter-btn:hover{border-color:var(--border2);color:var(--text);}
+  .filter-btn.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);}
+  .source-badge{font-size:10px;padding:2px 8px;border-radius:4px;font-weight:600;letter-spacing:.05em;}
+  .source-agent{background:var(--accent-dim2);color:var(--accent);}
+  .source-manual{background:var(--surface2);color:var(--text3);border:1px solid var(--border);}
+  .task-list{display:flex;flex-direction:column;gap:8px;margin-bottom:32px;}
+  .task-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .15s;}
+  .task-card:hover{border-color:var(--border2);}
+  .task-card.done{opacity:.4;}
+  .task-card.done .task-title{text-decoration:line-through;}
+  .task-check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border2);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
+  .task-check:hover{border-color:var(--accent);}
+  .task-check.checked{background:var(--accent);border-color:var(--accent);}
+  .task-check.checked::after{content:'✓';font-size:11px;color:#0a0a0b;font-weight:700;}
+  .task-body{flex:1;min-width:0;}
+  .task-meta{display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap;}
+  .tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;}
+  .tag-canal{background:var(--blue-dim);color:var(--blue);}
+  .tag-anuncio{background:var(--accent-dim2);color:var(--accent);}
+  .tag-urgent{background:var(--red-dim);color:var(--red);}
+  .tag-ok{background:var(--green-dim);color:var(--green);}
+  .tag-waiting{background:var(--purple-dim);color:var(--purple);}
+  .tag-pending{background:var(--amber-dim);color:var(--amber);}
+  .task-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px;}
+  .task-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:8px;}
+  .task-footer{display:flex;align-items:center;gap:12px;}
+  .task-date{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;}
+  .task-date.overdue{color:var(--red);font-weight:600;}
+  .task-date.today{color:var(--amber);font-weight:600;}
+  .task-date.soon{color:var(--accent);}
+  .task-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;}
+  .priority-dot{width:8px;height:8px;border-radius:50%;}
+  .conta-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:border-color .15s;margin-bottom:8px;}
+  .conta-card:hover{border-color:var(--border2);}
+  .conta-card.paga{opacity:.4;}
+  .conta-card.paga .conta-nome{text-decoration:line-through;}
+  .conta-check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
+  .conta-check:hover{border-color:var(--green);}
+  .conta-check.checked{background:var(--green);border-color:var(--green);}
+  .conta-check.checked::after{content:'✓';font-size:11px;color:#0a0a0b;font-weight:700;}
+  .conta-body{flex:1;}
+  .conta-top{display:flex;align-items:center;gap:8px;margin-bottom:3px;}
+  .conta-nome{font-size:14px;font-weight:500;color:var(--text);}
+  .conta-tipo{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;}
+  .tipo-fixa{background:var(--blue-dim);color:var(--blue);}
+  .tipo-variavel{background:var(--purple-dim);color:var(--purple);}
+  .tipo-avulsa{background:var(--amber-dim);color:var(--amber);}
+  .conta-vence{font-size:12px;color:var(--text3);}
+  .conta-vence.overdue{color:var(--red);font-weight:600;}
+  .conta-vence.today{color:var(--amber);font-weight:600;}
+  .conta-vence.soon{color:var(--accent);}
+  .conta-valor{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--text);flex-shrink:0;text-align:right;}
+  .conta-valor.variavel{color:var(--text2);font-size:13px;}
+  .conta-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:4px;border-radius:4px;transition:all .15s;flex-shrink:0;}
+  .conta-del:hover{color:var(--red);background:var(--red-dim);}
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;}
+  .modal-overlay.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:28px;width:560px;max-width:95vw;max-height:90vh;overflow-y:auto;transform:translateY(12px);transition:transform .2s;}
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+  .modal-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;}
+  .modal-close{background:var(--surface2);border:1px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+  .modal-close:hover{color:var(--text);border-color:var(--border2);}
+  .form-group{margin-bottom:16px;}
+  .form-label{display:block;font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;font-weight:600;}
+  .form-input,.form-select,.form-textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:13px;padding:10px 12px;outline:none;transition:border-color .15s;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);}
+  .form-textarea{resize:vertical;min-height:72px;}
+  .form-select option{background:var(--surface2);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .form-hint{font-size:11px;color:var(--text3);margin-top:4px;}
+  .btn-save{width:100%;background:var(--accent);color:#0a0a0b;border:none;border-radius:8px;padding:12px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px;transition:opacity .15s;}
+  .btn-save:hover{opacity:.85;}
+  .empty{text-align:center;padding:40px 20px;color:var(--text3);font-size:13px;}
+  .empty-icon{font-size:32px;margin-bottom:8px;}
+  .sync-bar{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:11px;color:var(--text3);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+  .sync-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  ::-webkit-scrollbar{width:6px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}.stats-grid.cols4{grid-template-columns:1fr 1fr;}.stats-grid.cols3{grid-template-columns:1fr 1fr 1fr;}.content{padding:20px 16px;}.topbar{padding:16px;}}
 </style>
 </head>
 <body>
-
 <div class="layout">
-
-  <!-- SIDEBAR -->
   <nav class="sidebar">
     <div class="logo">
       <div class="logo-mark">Mooners OS</div>
       <div class="logo-sub">Central de Controle</div>
     </div>
-
-    <!-- Module Switch -->
     <div class="module-tabs">
       <button class="module-tab active" id="tab-tasks" onclick="switchModule('tasks')">Tarefas</button>
       <button class="module-tab" id="tab-contas" onclick="switchModule('contas')">Contas</button>
     </div>
-
-    <!-- Tasks nav -->
     <div id="nav-tasks">
       <div class="nav-label">Visão</div>
-      <div class="nav-item active" id="nav-hoje" onclick="setView('hoje', this)">
-        <span class="nav-dot" style="background:var(--red)"></span>
-        Hoje
-        <span class="nav-badge urgent" id="badge-hoje">0</span>
-      </div>
-      <div class="nav-item" id="nav-proximas" onclick="setView('proximas', this)">
-        <span class="nav-dot" style="background:var(--amber)"></span>
-        Próximas
-        <span class="nav-badge" id="badge-proximas">0</span>
-      </div>
-      <div class="nav-item" id="nav-todas" onclick="setView('todas', this)">
-        <span class="nav-dot" style="background:var(--text3)"></span>
-        Todas
-        <span class="nav-badge" id="badge-todas">0</span>
-      </div>
-      <div class="nav-item" onclick="setView('concluidas', this)">
-        <span class="nav-dot" style="background:var(--green)"></span>
-        Concluídas
-      </div>
-
+      <div class="nav-item active" onclick="setView('hoje',this)"><span class="nav-dot" style="background:var(--red)"></span>Hoje<span class="nav-badge urgent" id="badge-hoje">0</span></div>
+      <div class="nav-item" onclick="setView('proximas',this)"><span class="nav-dot" style="background:var(--amber)"></span>Próximas<span class="nav-badge" id="badge-proximas">0</span></div>
+      <div class="nav-item" onclick="setView('todas',this)"><span class="nav-dot" style="background:var(--text3)"></span>Todas<span class="nav-badge" id="badge-todas">0</span></div>
+      <div class="nav-item" onclick="setView('concluidas',this)"><span class="nav-dot" style="background:var(--green)"></span>Concluídas</div>
       <div class="nav-label">Agentes</div>
-      <div class="nav-item" onclick="filterAgent('Leo', this)"><span class="nav-dot" style="background:var(--green)"></span>Leo</div>
-      <div class="nav-item" onclick="filterAgent('Maya', this)"><span class="nav-dot" style="background:var(--blue)"></span>Maya</div>
-      <div class="nav-item" onclick="filterAgent('Vera', this)"><span class="nav-dot" style="background:var(--purple)"></span>Vera</div>
-      <div class="nav-item" onclick="filterAgent('Nina', this)"><span class="nav-dot" style="background:var(--amber)"></span>Nina</div>
-      <div class="nav-item" onclick="filterAgent('Max', this)"><span class="nav-dot" style="background:var(--red)"></span>Max</div>
-      <div class="nav-item" onclick="filterAgent('Sol', this)"><span class="nav-dot" style="background:var(--accent)"></span>Sol</div>
-      <div class="nav-item" onclick="filterAgent('Diário', this)"><span class="nav-dot" style="background:var(--text2)"></span>Diário</div>
-
+      <div class="nav-item" onclick="filterAgent('Leo',this)"><span class="nav-dot" style="background:var(--green)"></span>Leo</div>
+      <div class="nav-item" onclick="filterAgent('Maya',this)"><span class="nav-dot" style="background:var(--blue)"></span>Maya</div>
+      <div class="nav-item" onclick="filterAgent('Vera',this)"><span class="nav-dot" style="background:var(--purple)"></span>Vera</div>
+      <div class="nav-item" onclick="filterAgent('Nina',this)"><span class="nav-dot" style="background:var(--amber)"></span>Nina</div>
+      <div class="nav-item" onclick="filterAgent('Max',this)"><span class="nav-dot" style="background:var(--red)"></span>Max</div>
+      <div class="nav-item" onclick="filterAgent('Sol',this)"><span class="nav-dot" style="background:var(--accent)"></span>Sol</div>
+      <div class="nav-item" onclick="filterAgent('Diário',this)"><span class="nav-dot" style="background:var(--text2)"></span>Diário</div>
       <div class="nav-label">Canais</div>
-      <div class="nav-item" onclick="filterCanal('Mercado Livre', this)"><span class="nav-dot" style="background:var(--amber)"></span>Mercado Livre</div>
-      <div class="nav-item" onclick="filterCanal('Shopee', this)"><span class="nav-dot" style="background:var(--red)"></span>Shopee</div>
-      <div class="nav-item" onclick="filterCanal('TikTok Shop', this)"><span class="nav-dot" style="background:var(--text2)"></span>TikTok Shop</div>
-      <div class="nav-item" onclick="filterCanal('Geral', this)"><span class="nav-dot" style="background:var(--text3)"></span>Geral</div>
+      <div class="nav-item" onclick="filterCanal('Mercado Livre',this)"><span class="nav-dot" style="background:var(--amber)"></span>Mercado Livre</div>
+      <div class="nav-item" onclick="filterCanal('Shopee',this)"><span class="nav-dot" style="background:var(--red)"></span>Shopee</div>
+      <div class="nav-item" onclick="filterCanal('TikTok Shop',this)"><span class="nav-dot" style="background:var(--text2)"></span>TikTok Shop</div>
+      <div class="nav-item" onclick="filterCanal('Geral',this)"><span class="nav-dot" style="background:var(--text3)"></span>Geral</div>
     </div>
-
-    <!-- Contas nav -->
     <div id="nav-contas" style="display:none">
       <div class="nav-label">Visão</div>
-      <div class="nav-item active" onclick="setContaView('pendentes', this)">
-        <span class="nav-dot" style="background:var(--red)"></span>
-        Pendentes
-        <span class="nav-badge urgent" id="badge-vencendo">0</span>
-      </div>
-      <div class="nav-item" onclick="setContaView('pagas', this)">
-        <span class="nav-dot" style="background:var(--green)"></span>
-        Pagas este mês
-      </div>
-      <div class="nav-item" onclick="setContaView('todas-contas', this)">
-        <span class="nav-dot" style="background:var(--text3)"></span>
-        Todas
-      </div>
-
+      <div class="nav-item active" onclick="setContaView('pendentes',this)"><span class="nav-dot" style="background:var(--red)"></span>Pendentes<span class="nav-badge urgent" id="badge-vencendo">0</span></div>
+      <div class="nav-item" onclick="setContaView('pagas',this)"><span class="nav-dot" style="background:var(--green)"></span>Pagas este mês</div>
+      <div class="nav-item" onclick="setContaView('todas-contas',this)"><span class="nav-dot" style="background:var(--text3)"></span>Todas</div>
       <div class="nav-label">Tipo</div>
-      <div class="nav-item" onclick="filterContaTipo('fixa', this)"><span class="nav-dot" style="background:var(--blue)"></span>Recorrente fixa</div>
-      <div class="nav-item" onclick="filterContaTipo('variavel', this)"><span class="nav-dot" style="background:var(--purple)"></span>Recorrente variável</div>
-      <div class="nav-item" onclick="filterContaTipo('avulsa', this)"><span class="nav-dot" style="background:var(--amber)"></span>Avulsa</div>
+      <div class="nav-item" onclick="filterContaTipo('fixa',this)"><span class="nav-dot" style="background:var(--blue)"></span>Recorrente fixa</div>
+      <div class="nav-item" onclick="filterContaTipo('variavel',this)"><span class="nav-dot" style="background:var(--purple)"></span>Recorrente variável</div>
+      <div class="nav-item" onclick="filterContaTipo('avulsa',this)"><span class="nav-dot" style="background:var(--amber)"></span>Avulsa</div>
     </div>
   </nav>
 
-  <!-- MAIN -->
   <div class="main">
-
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title" id="topbar-title">Hoje</div>
@@ -654,76 +192,38 @@
       </div>
       <button class="btn-add" id="btn-add" onclick="openModal()">+ Nova Tarefa</button>
     </div>
-
     <div class="content">
 
-      <!-- ══ TASKS PAGE ══ -->
+      <!-- TASKS -->
       <div class="page active" id="page-tasks">
-
+        <div class="sync-bar"><span class="sync-dot"></span>Tarefas dos agentes sincronizadas via GitHub · <span id="last-sync">carregando...</span></div>
         <div class="stats-grid cols4">
-          <div class="stat-card">
-            <div class="stat-label">Atrasadas</div>
-            <div class="stat-value red" id="stat-overdue">0</div>
-            <div class="stat-sub">requerem atenção</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Hoje</div>
-            <div class="stat-value amber" id="stat-today">0</div>
-            <div class="stat-sub">vencem hoje</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Esta semana</div>
-            <div class="stat-value accent" id="stat-week">0</div>
-            <div class="stat-sub">próximos 7 dias</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Concluídas</div>
-            <div class="stat-value text2" id="stat-done">0</div>
-            <div class="stat-sub">total</div>
-          </div>
+          <div class="stat-card"><div class="stat-label">Atrasadas</div><div class="stat-value red" id="stat-overdue">0</div><div class="stat-sub">requerem atenção</div></div>
+          <div class="stat-card"><div class="stat-label">Hoje</div><div class="stat-value amber" id="stat-today">0</div><div class="stat-sub">vencem hoje</div></div>
+          <div class="stat-card"><div class="stat-label">Esta semana</div><div class="stat-value accent" id="stat-week">0</div><div class="stat-sub">próximos 7 dias</div></div>
+          <div class="stat-card"><div class="stat-label">Concluídas</div><div class="stat-value text2" id="stat-done">0</div><div class="stat-sub">total</div></div>
         </div>
-
         <div class="section-header">
           <div class="section-title" id="task-section-title">Tarefas de Hoje</div>
           <div class="filter-row">
-            <button class="filter-btn active" onclick="setTaskFilter('all', this)">Todas</button>
-            <button class="filter-btn" onclick="setTaskFilter('urgent', this)">Urgente</button>
-            <button class="filter-btn" onclick="setTaskFilter('pending', this)">Pendente</button>
+            <button class="filter-btn active" onclick="setTaskFilter('all',this)">Todas</button>
+            <button class="filter-btn" onclick="setTaskFilter('urgent',this)">Urgente</button>
+            <button class="filter-btn" onclick="setTaskFilter('pending',this)">Pendente</button>
           </div>
         </div>
-
         <div class="task-list" id="task-list"></div>
       </div>
 
-      <!-- ══ CONTAS PAGE ══ -->
+      <!-- CONTAS -->
       <div class="page" id="page-contas">
-
         <div class="stats-grid cols3">
-          <div class="stat-card">
-            <div class="stat-label">Vence em 7 dias</div>
-            <div class="stat-value red" id="conta-stat-week">R$ 0</div>
-            <div class="stat-sub">a pagar esta semana</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Total do mês</div>
-            <div class="stat-value amber" id="conta-stat-mes">R$ 0</div>
-            <div class="stat-sub">contas fixas + variáveis</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Já pago</div>
-            <div class="stat-value accent" id="conta-stat-pago">R$ 0</div>
-            <div class="stat-sub">este mês</div>
-          </div>
+          <div class="stat-card"><div class="stat-label">Vence em 7 dias</div><div class="stat-value red" id="conta-stat-week">R$ 0</div><div class="stat-sub">a pagar esta semana</div></div>
+          <div class="stat-card"><div class="stat-label">Total do mês</div><div class="stat-value amber" id="conta-stat-mes">R$ 0</div><div class="stat-sub">contas fixas + variáveis</div></div>
+          <div class="stat-card"><div class="stat-label">Já pago</div><div class="stat-value accent" id="conta-stat-pago">R$ 0</div><div class="stat-sub">este mês</div></div>
         </div>
-
-        <div class="section-header">
-          <div class="section-title" id="conta-section-title">Contas Pendentes</div>
-        </div>
-
+        <div class="section-header"><div class="section-title" id="conta-section-title">Contas Pendentes</div></div>
         <div id="conta-list"></div>
-
       </div>
-
     </div>
   </div>
 </div>
@@ -731,68 +231,21 @@
 <!-- MODAL TASK -->
 <div class="modal-overlay" id="modal-task" onclick="closeModalOut(event,'modal-task')">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">Nova Tarefa</div>
-      <button class="modal-close" onclick="closeModal('modal-task')">✕</button>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Título</label>
-      <input class="form-input" id="t-title" placeholder="Ex: Aumentar ROAS objetivo para 4,5x" />
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Descrição / Instrução do agente</label>
-      <textarea class="form-textarea" id="t-desc" placeholder="Cole a instrução completa..."></textarea>
-    </div>
-
+    <div class="modal-header"><div class="modal-title">Nova Tarefa</div><button class="modal-close" onclick="closeModal('modal-task')">✕</button></div>
+    <div class="form-group"><label class="form-label">Título</label><input class="form-input" id="t-title" placeholder="Ex: Aumentar ROAS para 4,5x"/></div>
+    <div class="form-group"><label class="form-label">Descrição / Instrução do agente</label><textarea class="form-textarea" id="t-desc" placeholder="Cole a instrução completa..."></textarea></div>
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Agente</label>
-        <select class="form-select" id="t-agent">
-          <option>Leo</option><option>Maya</option><option>Vera</option>
-          <option>Nina</option><option>Max</option><option>Sol</option><option>Diário</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Canal</label>
-        <select class="form-select" id="t-canal">
-          <option>Mercado Livre</option><option>Shopee</option>
-          <option>TikTok Shop</option><option>Geral</option>
-        </select>
-      </div>
+      <div class="form-group"><label class="form-label">Agente</label><select class="form-select" id="t-agent"><option>Leo</option><option>Maya</option><option>Vera</option><option>Nina</option><option>Max</option><option>Sol</option><option>Diário</option></select></div>
+      <div class="form-group"><label class="form-label">Canal</label><select class="form-select" id="t-canal"><option>Mercado Livre</option><option>Shopee</option><option>TikTok Shop</option><option>Geral</option></select></div>
     </div>
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Anúncio / SKU</label>
-        <input class="form-input" id="t-anuncio" placeholder="Ex: Leitura +2.00" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Data limite</label>
-        <input class="form-input" type="date" id="t-date" />
-      </div>
+      <div class="form-group"><label class="form-label">Anúncio / SKU</label><input class="form-input" id="t-anuncio" placeholder="Ex: Leitura +2.00"/></div>
+      <div class="form-group"><label class="form-label">Data limite</label><input class="form-input" type="date" id="t-date"/></div>
     </div>
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Prioridade</label>
-        <select class="form-select" id="t-priority">
-          <option value="urgent">🔴 Urgente</option>
-          <option value="normal" selected>🟡 Normal</option>
-          <option value="low">🟢 Baixa</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Status</label>
-        <select class="form-select" id="t-status">
-          <option value="pending">Pendente</option>
-          <option value="in_progress">Em andamento</option>
-          <option value="waiting">Aguardando dado</option>
-        </select>
-      </div>
+      <div class="form-group"><label class="form-label">Prioridade</label><select class="form-select" id="t-priority"><option value="urgent">🔴 Urgente</option><option value="normal" selected>🟡 Normal</option><option value="low">🟢 Baixa</option></select></div>
+      <div class="form-group"><label class="form-label">Status</label><select class="form-select" id="t-status"><option value="pending">Pendente</option><option value="in_progress">Em andamento</option><option value="waiting">Aguardando dado</option></select></div>
     </div>
-
     <button class="btn-save" onclick="saveTask()">Salvar Tarefa</button>
   </div>
 </div>
@@ -800,57 +253,28 @@
 <!-- MODAL CONTA -->
 <div class="modal-overlay" id="modal-conta" onclick="closeModalOut(event,'modal-conta')">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">Nova Conta</div>
-      <button class="modal-close" onclick="closeModal('modal-conta')">✕</button>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Nome da conta</label>
-      <input class="form-input" id="c-nome" placeholder="Ex: Bling ERP, Aluguel, Fornecedor Rita" />
-    </div>
-
+    <div class="modal-header"><div class="modal-title">Nova Conta</div><button class="modal-close" onclick="closeModal('modal-conta')">✕</button></div>
+    <div class="form-group"><label class="form-label">Nome da conta</label><input class="form-input" id="c-nome" placeholder="Ex: Bling ERP, Fornecedor Rita"/></div>
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Tipo</label>
-        <select class="form-select" id="c-tipo" onchange="toggleValorHint()">
-          <option value="fixa">Recorrente — valor fixo</option>
-          <option value="variavel">Recorrente — valor variável</option>
-          <option value="avulsa">Avulsa (única vez)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Valor (R$)</label>
-        <input class="form-input" type="number" id="c-valor" placeholder="0,00" step="0.01" />
-        <div class="form-hint" id="c-valor-hint">Deixe em branco se o valor varia todo mês</div>
-      </div>
+      <div class="form-group"><label class="form-label">Tipo</label><select class="form-select" id="c-tipo"><option value="fixa">Recorrente — valor fixo</option><option value="variavel">Recorrente — valor variável</option><option value="avulsa">Avulsa (única vez)</option></select></div>
+      <div class="form-group"><label class="form-label">Valor (R$)</label><input class="form-input" type="number" id="c-valor" placeholder="0,00" step="0.01"/><div class="form-hint">Deixe em branco se varia</div></div>
     </div>
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Vencimento</label>
-        <input class="form-input" type="date" id="c-vence" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Dia de vencimento (recorrente)</label>
-        <input class="form-input" type="number" id="c-dia" placeholder="Ex: 10" min="1" max="31" />
-        <div class="form-hint">Para contas mensais, informe o dia</div>
-      </div>
+      <div class="form-group"><label class="form-label">Vencimento</label><input class="form-input" type="date" id="c-vence"/></div>
+      <div class="form-group"><label class="form-label">Dia mensal (recorrente)</label><input class="form-input" type="number" id="c-dia" placeholder="Ex: 10" min="1" max="31"/></div>
     </div>
-
-    <div class="form-group">
-      <label class="form-label">Observação (opcional)</label>
-      <input class="form-input" id="c-obs" placeholder="Ex: Cartão Nubank final 1234, Pix chave..." />
-    </div>
-
+    <div class="form-group"><label class="form-label">Observação</label><input class="form-input" id="c-obs" placeholder="Ex: Pix chave, cartão final 1234..."/></div>
     <button class="btn-save" onclick="saveConta()">Salvar Conta</button>
   </div>
 </div>
 
 <script>
-// ══ STATE ══════════════════════════════════════════════════════════════════
-let tasks = JSON.parse(localStorage.getItem('mooners_tasks_v2') || '[]');
-let contas = JSON.parse(localStorage.getItem('mooners_contas_v1') || '[]');
+// ══ DATA ═══════════════════════════════════════════════════════
+let agentTasks = [];   // vem do data.json (agentes)
+let manualTasks = JSON.parse(localStorage.getItem('mooners_manual_tasks') || '[]');
+let contas = JSON.parse(localStorage.getItem('mooners_contas_v2') || '[]');
+
+let tasks = [];
 let currentModule = 'tasks';
 let currentView = 'hoje';
 let currentContaView = 'pendentes';
@@ -859,115 +283,138 @@ let agentFilter = null;
 let canalFilter = null;
 let contaTipoFilter = null;
 
-// Sample tasks
-if (tasks.length === 0) {
-  const td = new Date().toISOString().split('T')[0];
-  const add = n => { const d = new Date(); d.setDate(d.getDate()+n); return d.toISOString().split('T')[0]; };
+// Carregar data.json do GitHub
+async function loadData() {
+  try {
+    const r = await fetch(`data.json?t=${Date.now()}`);
+    const d = await r.json();
+    agentTasks = d.tasks || [];
+    // Contas do JSON só se localStorage estiver vazio
+    if (contas.length === 0 && d.contas) {
+      contas = d.contas;
+      saveContas();
+    }
+    document.getElementById('last-sync').textContent = `atualizado ${d.lastUpdated||'agora'}`;
+  } catch(e) {
+    document.getElementById('last-sync').textContent = 'offline — usando cache local';
+  }
+  mergeTasks();
+  renderTasks();
+  renderContas();
+}
+
+function mergeTasks() {
+  // Marcar tarefas de agente como done se já marcadas localmente
+  const doneIds = JSON.parse(localStorage.getItem('mooners_done_ids') || '[]');
   tasks = [
-    { id:1, title:'Aumentar ROAS objetivo da campanha Leitura para 4,5x', desc:'Ajustar campanha existente para preservar histórico de aprendizado. Não criar campanha nova.', agent:'Leo', canal:'Mercado Livre', anuncio:'Leitura (MLB64402148)', date:td, priority:'urgent', status:'pending', done:false },
-    { id:2, title:'Repor estoque variação L-075 no Full com urgência', desc:'Grau mais visitado nos últimos 7 dias. Com 4 unidades, o ML pode estar limitando exposição do anúncio.', agent:'Leo', canal:'Mercado Livre', anuncio:'Leitura +0.75', date:td, priority:'urgent', status:'pending', done:false },
-    { id:3, title:'Medir ACOS da campanha Leitura após ajuste de ROAS', desc:'Critério de sucesso: ACOS ≤ 25,3% com ≥ 15 vendas/semana. Critério de parada: ACOS > 30%.', agent:'Leo', canal:'Mercado Livre', anuncio:'Leitura', date:add(7), priority:'normal', status:'waiting', done:false },
-    { id:4, title:'Pesquisa de mercado — óculos de leitura (background)', desc:'Preços, capas dominantes, kits dos concorrentes. Inteligência para quando Vera precisar decidir.', agent:'Maya', canal:'Mercado Livre', anuncio:'Leitura', date:add(3), priority:'low', status:'pending', done:false }
+    ...agentTasks.map(t => ({...t, source:'agent', done: doneIds.includes(t.id) || t.done})),
+    ...manualTasks.map(t => ({...t, source:'manual'}))
   ];
-  saveTasks();
 }
 
-// Sample contas
-if (contas.length === 0) {
-  contas = [
-    { id:1, nome:'Bling ERP', tipo:'fixa', valor:199, dia:5, vence: nextVence(5), obs:'Plano Crescimento', paga:false },
-    { id:2, nome:'Letzee', tipo:'fixa', valor:97, dia:10, vence: nextVence(10), obs:'', paga:false },
-    { id:3, nome:'Claude Pro', tipo:'fixa', valor:105, dia:15, vence: nextVence(15), obs:'', paga:false },
-  ];
-  saveContas();
+function saveDoneIds() {
+  const ids = tasks.filter(t=>t.done&&t.source==='agent').map(t=>t.id);
+  localStorage.setItem('mooners_done_ids', JSON.stringify(ids));
 }
 
-function nextVence(dia) {
-  const now = new Date();
-  const d = new Date(now.getFullYear(), now.getMonth(), dia);
-  if (d < now) d.setMonth(d.getMonth()+1);
-  return d.toISOString().split('T')[0];
-}
+function saveManual() { localStorage.setItem('mooners_manual_tasks', JSON.stringify(manualTasks)); }
+function saveContas() { localStorage.setItem('mooners_contas_v2', JSON.stringify(contas)); }
 
-function saveTasks() { localStorage.setItem('mooners_tasks_v2', JSON.stringify(tasks)); }
-function saveContas() { localStorage.setItem('mooners_contas_v1', JSON.stringify(contas)); }
-
+// ══ HELPERS ════════════════════════════════════════════════════
 function today() { return new Date().toISOString().split('T')[0]; }
-function addDays(n) { const d = new Date(); d.setDate(d.getDate()+n); return d.toISOString().split('T')[0]; }
-
-// ══ TASK HELPERS ════════════════════════════════════════════════════════════
-function isOverdue(t) { return !t.done && t.date && t.date < today(); }
-function isToday(t) { return !t.done && t.date === today(); }
-function isThisWeek(t) { return !t.done && t.date > today() && t.date <= addDays(7); }
+function addDays(n) { const d=new Date(); d.setDate(d.getDate()+n); return d.toISOString().split('T')[0]; }
+function isOverdue(t) { return !t.done&&t.date&&t.date<today(); }
+function isToday(t) { return !t.done&&t.date===today(); }
+function isThisWeek(t) { return !t.done&&t.date>today()&&t.date<=addDays(7); }
 
 function dateLabel(d) {
-  if (!d) return '';
-  const diff = Math.round((new Date(d+'T12:00:00') - new Date(today()+'T12:00:00')) / 86400000);
-  if (diff < 0) return `Atrasada ${Math.abs(diff)}d`;
-  if (diff === 0) return 'Hoje';
-  if (diff === 1) return 'Amanhã';
-  if (diff <= 7) return `Em ${diff} dias`;
+  if(!d) return '';
+  const diff=Math.round((new Date(d+'T12:00:00')-new Date(today()+'T12:00:00'))/86400000);
+  if(diff<0) return `Atrasada ${Math.abs(diff)}d`;
+  if(diff===0) return 'Hoje';
+  if(diff===1) return 'Amanhã';
+  if(diff<=7) return `Em ${diff} dias`;
   return new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'short'});
 }
 
 function dateClass(t) {
-  if (isOverdue(t)) return 'overdue';
-  if (isToday(t)) return 'today';
-  if (isThisWeek(t)) return 'soon';
+  if(isOverdue(t)) return 'overdue';
+  if(isToday(t)) return 'today';
+  if(isThisWeek(t)) return 'soon';
   return '';
 }
 
-function priorityColor(p) {
-  return p==='urgent' ? 'var(--red)' : p==='low' ? 'var(--green)' : 'var(--amber)';
-}
-
-function agentColor(a) {
-  return {Leo:'var(--green)',Maya:'var(--blue)',Vera:'var(--purple)',Nina:'var(--amber)',Max:'var(--red)',Sol:'var(--accent)',Diário:'var(--text2)'}[a]||'var(--text2)';
-}
-
+function priorityColor(p) { return p==='urgent'?'var(--red)':p==='low'?'var(--green)':'var(--amber)'; }
+function agentColor(a) { return {Leo:'var(--green)',Maya:'var(--blue)',Vera:'var(--purple)',Nina:'var(--amber)',Max:'var(--red)',Sol:'var(--accent)',Diário:'var(--text2)'}[a]||'var(--text2)'; }
 function statusBadge(s) {
-  if (s==='in_progress') return '<span class="tag tag-ok">Em andamento</span>';
-  if (s==='waiting') return '<span class="tag tag-waiting">Aguardando</span>';
+  if(s==='in_progress') return '<span class="tag tag-ok">Em andamento</span>';
+  if(s==='waiting') return '<span class="tag tag-waiting">Aguardando</span>';
+  return '';
+}
+function fmtVal(v) { return v!=null?'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2}):null; }
+function tipoLabel(t) { return {fixa:'Recorrente fixa',variavel:'Recorrente variável',avulsa:'Avulsa'}[t]||t; }
+function tipoClass(t) { return {fixa:'tipo-fixa',variavel:'tipo-variavel',avulsa:'tipo-avulsa'}[t]||''; }
+
+function nextVence(dia) {
+  const now=new Date();
+  const d=new Date(now.getFullYear(),now.getMonth(),dia);
+  if(d<now) d.setMonth(d.getMonth()+1);
+  return d.toISOString().split('T')[0];
+}
+
+function contaDateLabel(d) {
+  if(!d) return '';
+  const diff=Math.round((new Date(d+'T12:00:00')-new Date(today()+'T12:00:00'))/86400000);
+  if(diff<0) return `Vencida há ${Math.abs(diff)}d`;
+  if(diff===0) return 'Vence hoje';
+  if(diff===1) return 'Vence amanhã';
+  if(diff<=7) return `Vence em ${diff} dias`;
+  return `Vence ${new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})}`;
+}
+
+function contaDateClass(c) {
+  if(c.paga||!c.vence) return '';
+  const diff=Math.round((new Date(c.vence+'T12:00:00')-new Date(today()+'T12:00:00'))/86400000);
+  if(diff<0) return 'overdue';
+  if(diff===0) return 'today';
+  if(diff<=7) return 'soon';
   return '';
 }
 
-// ══ TASK RENDER ══════════════════════════════════════════════════════════════
+// ══ RENDER TASKS ═══════════════════════════════════════════════
 function getTaskList() {
-  let list = [...tasks];
-  if (currentView==='hoje') list = list.filter(t => isOverdue(t)||isToday(t));
-  else if (currentView==='proximas') list = list.filter(isThisWeek);
-  else if (currentView==='todas') list = list.filter(t => !t.done);
-  else if (currentView==='concluidas') list = list.filter(t => t.done);
-  if (agentFilter) list = list.filter(t => t.agent===agentFilter);
-  if (canalFilter) list = list.filter(t => t.canal===canalFilter);
-  if (taskFilter==='urgent') list = list.filter(t => t.priority==='urgent');
-  if (taskFilter==='pending') list = list.filter(t => t.status==='pending');
-  list.sort((a,b) => {
-    if (a.done!==b.done) return a.done?1:-1;
-    if (a.priority==='urgent'&&b.priority!=='urgent') return -1;
-    if (b.priority==='urgent'&&a.priority!=='urgent') return 1;
+  let list=[...tasks];
+  if(currentView==='hoje') list=list.filter(t=>isOverdue(t)||isToday(t));
+  else if(currentView==='proximas') list=list.filter(isThisWeek);
+  else if(currentView==='todas') list=list.filter(t=>!t.done);
+  else if(currentView==='concluidas') list=list.filter(t=>t.done);
+  if(agentFilter) list=list.filter(t=>t.agent===agentFilter);
+  if(canalFilter) list=list.filter(t=>t.canal===canalFilter);
+  if(taskFilter==='urgent') list=list.filter(t=>t.priority==='urgent');
+  if(taskFilter==='pending') list=list.filter(t=>t.status==='pending');
+  list.sort((a,b)=>{
+    if(a.done!==b.done) return a.done?1:-1;
+    if(a.priority==='urgent'&&b.priority!=='urgent') return -1;
+    if(b.priority==='urgent'&&a.priority!=='urgent') return 1;
     return (a.date||'').localeCompare(b.date||'');
   });
   return list;
 }
 
 function renderTasks() {
-  const list = getTaskList();
-  const el = document.getElementById('task-list');
-
-  document.getElementById('stat-overdue').textContent = tasks.filter(isOverdue).length;
-  document.getElementById('stat-today').textContent = tasks.filter(isToday).length;
-  document.getElementById('stat-week').textContent = tasks.filter(isThisWeek).length;
-  document.getElementById('stat-done').textContent = tasks.filter(t=>t.done).length;
-  document.getElementById('badge-hoje').textContent = tasks.filter(t=>isOverdue(t)||isToday(t)).length;
-  document.getElementById('badge-proximas').textContent = tasks.filter(isThisWeek).length;
-  document.getElementById('badge-todas').textContent = tasks.filter(t=>!t.done).length;
-
-  if (!list.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">✓</div>Nenhuma tarefa aqui.</div>'; return; }
-
-  el.innerHTML = list.map(t => `
+  const list=getTaskList();
+  const el=document.getElementById('task-list');
+  document.getElementById('stat-overdue').textContent=tasks.filter(isOverdue).length;
+  document.getElementById('stat-today').textContent=tasks.filter(isToday).length;
+  document.getElementById('stat-week').textContent=tasks.filter(isThisWeek).length;
+  document.getElementById('stat-done').textContent=tasks.filter(t=>t.done).length;
+  document.getElementById('badge-hoje').textContent=tasks.filter(t=>isOverdue(t)||isToday(t)).length;
+  document.getElementById('badge-proximas').textContent=tasks.filter(isThisWeek).length;
+  document.getElementById('badge-todas').textContent=tasks.filter(t=>!t.done).length;
+  if(!list.length){el.innerHTML='<div class="empty"><div class="empty-icon">✓</div>Nenhuma tarefa aqui.</div>';return;}
+  el.innerHTML=list.map(t=>`
     <div class="task-card ${t.done?'done':''}">
-      <div class="task-check ${t.done?'checked':''}" onclick="toggleTask(${t.id})"></div>
+      <div class="task-check ${t.done?'checked':''}" onclick="toggleTask(${t.id},'${t.source}')"></div>
       <div class="task-body">
         <div class="task-meta">
           <span class="tag" style="background:${agentColor(t.agent)}22;color:${agentColor(t.agent)};text-transform:uppercase;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:.06em">${t.agent}</span>
@@ -975,6 +422,7 @@ function renderTasks() {
           ${t.anuncio?`<span class="tag tag-anuncio">${t.anuncio}</span>`:''}
           ${t.priority==='urgent'?'<span class="tag tag-urgent">Urgente</span>':''}
           ${statusBadge(t.status)}
+          <span class="source-badge ${t.source==='agent'?'source-agent':'source-manual'}">${t.source==='agent'?'Agente':'Manual'}</span>
         </div>
         <div class="task-title">${t.title}</div>
         ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
@@ -982,267 +430,167 @@ function renderTasks() {
           ${t.date?`<span class="task-date ${dateClass(t)}">📅 ${dateLabel(t.date)}</span>`:''}
         </div>
       </div>
-      <div class="task-right">
-        <div class="priority-dot" style="background:${priorityColor(t.priority)}"></div>
-      </div>
+      <div class="task-right"><div class="priority-dot" style="background:${priorityColor(t.priority)}"></div></div>
     </div>
   `).join('');
 }
 
-// ══ CONTA HELPERS ═══════════════════════════════════════════════════════════
-function contaDateLabel(d) {
-  if (!d) return '';
-  const diff = Math.round((new Date(d+'T12:00:00') - new Date(today()+'T12:00:00')) / 86400000);
-  if (diff < 0) return `Vencida há ${Math.abs(diff)}d`;
-  if (diff === 0) return 'Vence hoje';
-  if (diff === 1) return 'Vence amanhã';
-  if (diff <= 7) return `Vence em ${diff} dias`;
-  return `Vence em ${new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})}`;
-}
-
-function contaDateClass(c) {
-  if (c.paga) return '';
-  if (!c.vence) return '';
-  const diff = Math.round((new Date(c.vence+'T12:00:00') - new Date(today()+'T12:00:00')) / 86400000);
-  if (diff < 0) return 'overdue';
-  if (diff === 0) return 'today';
-  if (diff <= 7) return 'soon';
-  return '';
-}
-
-function fmtVal(v) {
-  if (!v && v!==0) return null;
-  return 'R$ ' + Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-}
-
-function tipoLabel(t) {
-  return {fixa:'Recorrente fixa',variavel:'Recorrente variável',avulsa:'Avulsa'}[t]||t;
-}
-
-function tipoClass(t) {
-  return {fixa:'tipo-fixa',variavel:'tipo-variavel',avulsa:'tipo-avulsa'}[t]||'';
-}
-
-// ══ CONTA RENDER ════════════════════════════════════════════════════════════
+// ══ RENDER CONTAS ══════════════════════════════════════════════
 function renderContas() {
-  const el = document.getElementById('conta-list');
-  let list = [...contas];
-
-  if (currentContaView==='pendentes') list = list.filter(c=>!c.paga);
-  else if (currentContaView==='pagas') list = list.filter(c=>c.paga);
-  if (contaTipoFilter) list = list.filter(c=>c.tipo===contaTipoFilter);
-
-  list.sort((a,b) => (a.vence||'').localeCompare(b.vence||''));
-
-  // Stats
-  const semana = contas.filter(c=>!c.paga&&c.vence&&c.vence<=addDays(7));
-  const totalSemana = semana.reduce((s,c)=>s+(Number(c.valor)||0),0);
-  const totalMes = contas.filter(c=>c.tipo!=='avulsa'||!c.paga).reduce((s,c)=>s+(Number(c.valor)||0),0);
-  const totalPago = contas.filter(c=>c.paga).reduce((s,c)=>s+(Number(c.valor)||0),0);
-
-  document.getElementById('conta-stat-week').textContent = fmtVal(totalSemana)||'—';
-  document.getElementById('conta-stat-mes').textContent = fmtVal(totalMes)||'—';
-  document.getElementById('conta-stat-pago').textContent = fmtVal(totalPago)||'—';
-
-  const vencendo = contas.filter(c=>!c.paga&&c.vence&&c.vence<=addDays(3)).length;
-  document.getElementById('badge-vencendo').textContent = vencendo;
-
-  if (!list.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">💸</div>Nenhuma conta aqui.</div>'; return; }
-
-  el.innerHTML = list.map(c => `
+  const el=document.getElementById('conta-list');
+  let list=[...contas];
+  if(currentContaView==='pendentes') list=list.filter(c=>!c.paga);
+  else if(currentContaView==='pagas') list=list.filter(c=>c.paga);
+  if(contaTipoFilter) list=list.filter(c=>c.tipo===contaTipoFilter);
+  list.sort((a,b)=>(a.vence||'').localeCompare(b.vence||''));
+  const semana=contas.filter(c=>!c.paga&&c.vence&&c.vence<=addDays(7));
+  document.getElementById('conta-stat-week').textContent=fmtVal(semana.reduce((s,c)=>s+(Number(c.valor)||0),0))||'—';
+  document.getElementById('conta-stat-mes').textContent=fmtVal(contas.filter(c=>c.tipo!=='avulsa').reduce((s,c)=>s+(Number(c.valor)||0),0))||'—';
+  document.getElementById('conta-stat-pago').textContent=fmtVal(contas.filter(c=>c.paga).reduce((s,c)=>s+(Number(c.valor)||0),0))||'—';
+  document.getElementById('badge-vencendo').textContent=contas.filter(c=>!c.paga&&c.vence&&c.vence<=addDays(3)).length;
+  if(!list.length){el.innerHTML='<div class="empty"><div class="empty-icon">💸</div>Nenhuma conta aqui.</div>';return;}
+  el.innerHTML=list.map(c=>`
     <div class="conta-card ${c.paga?'paga':''}">
       <div class="conta-check ${c.paga?'checked':''}" onclick="toggleConta(${c.id})"></div>
       <div class="conta-body">
-        <div class="conta-top">
-          <div class="conta-nome">${c.nome}</div>
-          <span class="conta-tipo ${tipoClass(c.tipo)}">${tipoLabel(c.tipo)}</span>
-        </div>
-        <div class="conta-vence ${contaDateClass(c)}">
-          ${c.vence ? contaDateLabel(c.vence) : c.dia ? `Todo dia ${c.dia}` : ''}
-          ${c.obs ? ` · ${c.obs}` : ''}
-        </div>
+        <div class="conta-top"><div class="conta-nome">${c.nome}</div><span class="conta-tipo ${tipoClass(c.tipo)}">${tipoLabel(c.tipo)}</span></div>
+        <div class="conta-vence ${contaDateClass(c)}">${c.vence?contaDateLabel(c.vence):c.dia?`Todo dia ${c.dia}`:''}${c.obs?` · ${c.obs}`:''}</div>
       </div>
-      <div class="conta-valor ${!c.valor?'variavel':''}">
-        ${c.valor ? fmtVal(c.valor) : 'Variável'}
-      </div>
-      <button class="conta-del" onclick="deleteConta(${c.id})" title="Remover">×</button>
+      <div class="conta-valor ${!c.valor?'variavel':''}">${c.valor?fmtVal(c.valor):'Variável'}</div>
+      <button class="conta-del" onclick="deleteConta(${c.id})">×</button>
     </div>
   `).join('');
 }
 
-// ══ ACTIONS ═════════════════════════════════════════════════════════════════
-function toggleTask(id) {
-  const t = tasks.find(t=>t.id===id);
-  if (t) { t.done=!t.done; saveTasks(); renderTasks(); }
+// ══ ACTIONS ════════════════════════════════════════════════════
+function toggleTask(id, source) {
+  const t=tasks.find(t=>t.id===id);
+  if(!t) return;
+  t.done=!t.done;
+  if(source==='agent') saveDoneIds();
+  else {
+    const m=manualTasks.find(t=>t.id===id);
+    if(m) m.done=!m.done;
+    saveManual();
+  }
+  renderTasks();
 }
 
 function toggleConta(id) {
-  const c = contas.find(c=>c.id===id);
-  if (!c) return;
-  c.paga = !c.paga;
-  // Se recorrente e marcou como paga, avança o vencimento pro próximo mês
-  if (c.paga && c.tipo!=='avulsa' && c.dia) {
-    const now = new Date();
-    const next = new Date(now.getFullYear(), now.getMonth()+1, c.dia);
-    c.vence = next.toISOString().split('T')[0];
+  const c=contas.find(c=>c.id===id);
+  if(!c) return;
+  c.paga=!c.paga;
+  if(c.paga&&c.tipo!=='avulsa'&&c.dia) {
+    const now=new Date();
+    const next=new Date(now.getFullYear(),now.getMonth()+1,c.dia);
+    c.vence=next.toISOString().split('T')[0];
   }
   saveContas(); renderContas();
 }
 
 function deleteConta(id) {
-  if (!confirm('Remover esta conta?')) return;
-  contas = contas.filter(c=>c.id!==id);
+  if(!confirm('Remover esta conta?')) return;
+  contas=contas.filter(c=>c.id!==id);
   saveContas(); renderContas();
 }
 
-// ══ VIEWS ═══════════════════════════════════════════════════════════════════
+// ══ VIEWS ══════════════════════════════════════════════════════
 function switchModule(m) {
-  currentModule = m;
-  document.getElementById('page-tasks').classList.toggle('active', m==='tasks');
-  document.getElementById('page-contas').classList.toggle('active', m==='contas');
-  document.getElementById('nav-tasks').style.display = m==='tasks'?'':'none';
-  document.getElementById('nav-contas').style.display = m==='contas'?'':'none';
-  document.getElementById('tab-tasks').classList.toggle('active', m==='tasks');
-  document.getElementById('tab-contas').classList.toggle('active', m==='contas');
-  document.getElementById('btn-add').textContent = m==='tasks' ? '+ Nova Tarefa' : '+ Nova Conta';
-  document.getElementById('topbar-title').textContent = m==='tasks' ? 'Hoje' : 'Contas a Pagar';
-  if (m==='contas') renderContas();
-  else renderTasks();
+  currentModule=m;
+  document.getElementById('page-tasks').classList.toggle('active',m==='tasks');
+  document.getElementById('page-contas').classList.toggle('active',m==='contas');
+  document.getElementById('nav-tasks').style.display=m==='tasks'?'':'none';
+  document.getElementById('nav-contas').style.display=m==='contas'?'':'none';
+  document.getElementById('tab-tasks').classList.toggle('active',m==='tasks');
+  document.getElementById('tab-contas').classList.toggle('active',m==='contas');
+  document.getElementById('btn-add').textContent=m==='tasks'?'+ Nova Tarefa':'+ Nova Conta';
+  document.getElementById('topbar-title').textContent=m==='tasks'?'Hoje':'Contas a Pagar';
+  if(m==='contas') renderContas(); else renderTasks();
 }
 
-function setView(v, el) {
-  currentView = v;
-  agentFilter = null; canalFilter = null;
-  const titles = {hoje:'Hoje',proximas:'Próximas',todas:'Todas as Tarefas',concluidas:'Concluídas'};
-  const sections = {hoje:'Tarefas de Hoje',proximas:'Próximos 7 Dias',todas:'Todas as Tarefas',concluidas:'Concluídas'};
-  document.getElementById('topbar-title').textContent = titles[v];
-  document.getElementById('task-section-title').textContent = sections[v];
+function setView(v,el) {
+  currentView=v; agentFilter=null; canalFilter=null;
+  const titles={hoje:'Hoje',proximas:'Próximas',todas:'Todas as Tarefas',concluidas:'Concluídas'};
+  const sections={hoje:'Tarefas de Hoje',proximas:'Próximos 7 Dias',todas:'Todas as Tarefas',concluidas:'Concluídas'};
+  document.getElementById('topbar-title').textContent=titles[v];
+  document.getElementById('task-section-title').textContent=sections[v];
   document.querySelectorAll('#nav-tasks .nav-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-  renderTasks();
+  el.classList.add('active'); renderTasks();
 }
 
-function filterAgent(a, el) {
-  agentFilter = a; canalFilter = null; currentView = 'todas';
-  document.getElementById('topbar-title').textContent = a;
-  document.getElementById('task-section-title').textContent = a;
+function filterAgent(a,el) {
+  agentFilter=a; canalFilter=null; currentView='todas';
+  document.getElementById('topbar-title').textContent=a;
+  document.getElementById('task-section-title').textContent=a;
   document.querySelectorAll('#nav-tasks .nav-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-  renderTasks();
+  el.classList.add('active'); renderTasks();
 }
 
-function filterCanal(c, el) {
-  canalFilter = c; agentFilter = null; currentView = 'todas';
-  document.getElementById('topbar-title').textContent = c;
-  document.getElementById('task-section-title').textContent = c;
+function filterCanal(c,el) {
+  canalFilter=c; agentFilter=null; currentView='todas';
+  document.getElementById('topbar-title').textContent=c;
+  document.getElementById('task-section-title').textContent=c;
   document.querySelectorAll('#nav-tasks .nav-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-  renderTasks();
+  el.classList.add('active'); renderTasks();
 }
 
-function setTaskFilter(f, el) {
-  taskFilter = f;
+function setTaskFilter(f,el) {
+  taskFilter=f;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  renderTasks();
+  el.classList.add('active'); renderTasks();
 }
 
-function setContaView(v, el) {
-  currentContaView = v; contaTipoFilter = null;
-  const titles = {'pendentes':'Contas Pendentes','pagas':'Pagas Este Mês','todas-contas':'Todas as Contas'};
-  document.getElementById('conta-section-title').textContent = titles[v];
+function setContaView(v,el) {
+  currentContaView=v; contaTipoFilter=null;
+  const titles={'pendentes':'Contas Pendentes','pagas':'Pagas Este Mês','todas-contas':'Todas as Contas'};
+  document.getElementById('conta-section-title').textContent=titles[v];
   document.querySelectorAll('#nav-contas .nav-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-  renderContas();
+  el.classList.add('active'); renderContas();
 }
 
-function filterContaTipo(t, el) {
-  contaTipoFilter = t; currentContaView = 'pendentes';
-  document.getElementById('conta-section-title').textContent = tipoLabel(t);
+function filterContaTipo(t,el) {
+  contaTipoFilter=t; currentContaView='pendentes';
+  document.getElementById('conta-section-title').textContent=tipoLabel(t);
   document.querySelectorAll('#nav-contas .nav-item').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-  renderContas();
+  el.classList.add('active'); renderContas();
 }
 
-// ══ MODAL ═══════════════════════════════════════════════════════════════════
+// ══ MODAL ══════════════════════════════════════════════════════
 function openModal() {
-  if (currentModule==='tasks') {
-    document.getElementById('t-date').value = today();
-    document.getElementById('modal-task').classList.add('open');
-  } else {
-    document.getElementById('c-vence').value = today();
-    document.getElementById('modal-conta').classList.add('open');
-  }
+  if(currentModule==='tasks'){document.getElementById('t-date').value=today();document.getElementById('modal-task').classList.add('open');}
+  else{document.getElementById('c-vence').value=today();document.getElementById('modal-conta').classList.add('open');}
 }
-
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
-}
-
-function closeModalOut(e, id) {
-  if (e.target === document.getElementById(id)) closeModal(id);
-}
-
-function toggleValorHint() {
-  const tipo = document.getElementById('c-tipo').value;
-  document.getElementById('c-valor-hint').textContent =
-    tipo==='variavel' ? 'Deixe em branco se o valor varia todo mês' :
-    tipo==='avulsa' ? 'Valor desta cobrança' : 'Valor mensal fixo';
-}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+function closeModalOut(e,id){if(e.target===document.getElementById(id))closeModal(id);}
 
 function saveTask() {
-  const title = document.getElementById('t-title').value.trim();
-  if (!title) { alert('Título obrigatório'); return; }
-  tasks.push({
-    id: Date.now(),
-    title,
-    desc: document.getElementById('t-desc').value.trim(),
-    agent: document.getElementById('t-agent').value,
-    canal: document.getElementById('t-canal').value,
-    anuncio: document.getElementById('t-anuncio').value.trim(),
-    date: document.getElementById('t-date').value,
-    priority: document.getElementById('t-priority').value,
-    status: document.getElementById('t-status').value,
-    done: false
-  });
-  saveTasks();
+  const title=document.getElementById('t-title').value.trim();
+  if(!title){alert('Título obrigatório');return;}
+  const t={id:Date.now(),title,desc:document.getElementById('t-desc').value.trim(),agent:document.getElementById('t-agent').value,canal:document.getElementById('t-canal').value,anuncio:document.getElementById('t-anuncio').value.trim(),date:document.getElementById('t-date').value,priority:document.getElementById('t-priority').value,status:document.getElementById('t-status').value,done:false,source:'manual'};
+  manualTasks.push(t); saveManual();
   closeModal('modal-task');
   ['t-title','t-desc','t-anuncio'].forEach(id=>document.getElementById(id).value='');
-  currentView='todas';
+  mergeTasks(); currentView='todas';
   document.getElementById('topbar-title').textContent='Todas as Tarefas';
   renderTasks();
 }
 
 function saveConta() {
-  const nome = document.getElementById('c-nome').value.trim();
-  if (!nome) { alert('Nome obrigatório'); return; }
-  const tipo = document.getElementById('c-tipo').value;
-  const dia = parseInt(document.getElementById('c-dia').value)||null;
-  let vence = document.getElementById('c-vence').value;
-  if (!vence && dia) vence = nextVence(dia);
-
-  contas.push({
-    id: Date.now(),
-    nome,
-    tipo,
-    valor: parseFloat(document.getElementById('c-valor').value)||null,
-    dia,
-    vence,
-    obs: document.getElementById('c-obs').value.trim(),
-    paga: false
-  });
-  saveContas();
-  closeModal('modal-conta');
+  const nome=document.getElementById('c-nome').value.trim();
+  if(!nome){alert('Nome obrigatório');return;}
+  const tipo=document.getElementById('c-tipo').value;
+  const dia=parseInt(document.getElementById('c-dia').value)||null;
+  let vence=document.getElementById('c-vence').value;
+  if(!vence&&dia) vence=nextVence(dia);
+  contas.push({id:Date.now(),nome,tipo,valor:parseFloat(document.getElementById('c-valor').value)||null,dia,vence,obs:document.getElementById('c-obs').value.trim(),paga:false});
+  saveContas(); closeModal('modal-conta');
   ['c-nome','c-valor','c-dia','c-vence','c-obs'].forEach(id=>document.getElementById(id).value='');
   renderContas();
 }
 
-// ══ INIT ════════════════════════════════════════════════════════════════════
-document.getElementById('today-date').textContent = new Date().toLocaleDateString('pt-BR',{
-  weekday:'long', day:'numeric', month:'long', year:'numeric'
-});
-
-renderTasks();
+// ══ INIT ═══════════════════════════════════════════════════════
+document.getElementById('today-date').textContent=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+loadData();
 </script>
 </body>
 </html>
