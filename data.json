@@ -49,8 +49,34 @@
       "date": "2026-06-25",
       "priority": "low",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-06-22"
+    },
+    {
+      "id": 5,
+      "title": "Criar Anúncio 3 — Leitura unitário + kit limpeza",
+      "desc": "Criar novo anúncio: 1 óculos + estojo + flanela + cordão + kit limpeza. Preço: R$54,90 promocional, âncora R$79,90. Kit limpeza deve aparecer explicitamente no título e na capa. Todos os graus como variação. Anúncio 2 (kit 3) mantido ativo — monitorar canibalização.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura — Anúncio 3",
+      "date": "2026-06-25",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-06-25"
+    },
+    {
+      "id": 6,
+      "title": "Medir desempenho Anúncio 3 Leitura + canibalização A1",
+      "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. Decidir sobre Ads no A3 com base nos dados.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura — Anúncio 1 e Anúncio 3",
+      "date": "2026-07-09",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-06-25"
     }
   ],
   "contas": [
@@ -85,5 +111,5 @@
       "paga": false
     }
   ],
-  "lastUpdated": "2026-06-22"
+  "lastUpdated": "2026-06-25"
 }
