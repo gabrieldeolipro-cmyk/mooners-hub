@@ -77,6 +77,32 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-06-25"
+    },
+    {
+      "id": 1782419662927,
+      "title": "Maya: pesquisa mercado Crystal Solar ML",
+      "desc": "Pesquisar óculos de sol armação transparente / crystal no Mercado Livre. OBRIGATÓRIO: (1) Aba Análise de Mercado ML → categoria Acessório de Moda → subcategoria Óculos → analisar posição Mooners e concorrentes reais (excluir marcas premium). (2) JoomPulse → concorrentes identificados na análise ML → portfólio, preços, volume, tendência. Outputs esperados: faixa de preço dominante (Mooners está em R$69–89), capas que convertem, se existe espaço em preço acima de R$69, lacunas de posicionamento por cor. Entregar handoff para Vera com recomendação de preço e ROAS objetivo.",
+      "agent": "Maya",
+      "canal": "Mercado Livre",
+      "anuncio": "Crystal Solar",
+      "date": "2026-06-25",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-06-25"
+    },
+    {
+      "id": 1782419662928,
+      "title": "Vera: decisão preço e ROAS Crystal Solar pós-Maya",
+      "desc": "Após receber handoff da Maya com dados de mercado Crystal Solar: (1) Definir preço final de cada variação (R$69, R$79 ou R$89 — ou ajuste). Atenção: cruzar R$79 aumenta frete de R$7,75 para R$12,35, reduzindo margem. (2) Definir ROAS objetivo para campanha de Ads. Referência Leo: R$69→ROAS mín 4,0x | R$79→4,3x | R$89→3,7x. (3) Decidir se Ads roda por catálogo ou por anúncio principal. Registrar decisão no Diário.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Crystal Solar",
+      "date": "2026-06-25",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-06-25"
     }
   ],
   "contas": [
