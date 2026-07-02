@@ -679,7 +679,7 @@
     {
       "id": 1783000000030,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
-      "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias). | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
+      "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias). | OBS REVISÃO: Ads reativados? SIM → Diário redesenha checklist diário pós-emergência e recria série. NÃO → recriar diárias por mais 15 dias e revisar novamente.",
       "agent": "Diário",
       "canal": "Mercado Livre",
       "anuncio": "Todos",
@@ -1095,7 +1095,7 @@
     {
       "id": 1783000000062,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
-      "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub. | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
+      "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub. | OBS REVISÃO: checar adesão às 8 semanas de rotina semanal. ≥6/8 semanas cumpridas → recriar por mais 8 semanas. <6/8 → acionar Nina para diagnóstico antes de recriar.",
       "agent": "Diário",
       "canal": "Mercado Livre",
       "anuncio": "Todos",
