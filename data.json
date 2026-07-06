@@ -1182,6 +1182,45 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-02"
+    },
+    {
+      "id": 1783000000069,
+      "title": "Checkpoint de conversão — Anúncio 3 Leitura Kit Limpeza",
+      "desc": "Revisar CTR e conversão do Anúncio 3 (Leitura Kit Limpeza) 14 dias após publicação (06/07/2026). Critério de sucesso: conversão >= 4% e CTR >= 3%. Critério de parada: conversão < 2% em 7 dias com mínimo de 100 visitas.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-20",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-06"
+    },
+    {
+      "id": 1783000000070,
+      "title": "Verificar imagens de variação — 15 graus Anúncio 3",
+      "desc": "Confirmar que as 15 imagens de variação por grau (+0,50 ao +4,00) foram subidas corretamente no ML, uma por variação. Verificar se o grau aparece legível no canto inferior direito de cada imagem.",
+      "agent": "Sol",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-07",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-06"
+    },
+    {
+      "id": 1783000000071,
+      "title": "Incluir Anúncio 3 em campanha de Ads quando reativar",
+      "desc": "Quando os Ads do ML forem reativados, incluir o Anúncio 3 (Leitura Kit Limpeza) na campanha. Calcular ACOS máximo suportável e ROAS mínimo com base no preço promocional R4,90. Coordenar com Leo e Vera.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-20",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-06"
     }
   ],
   "contas": [
@@ -1236,5 +1275,5 @@
       "paga": false
     }
   ],
-  "lastUpdated": "2026-07-02"
+  "lastUpdated": "2026-07-06"
 }
