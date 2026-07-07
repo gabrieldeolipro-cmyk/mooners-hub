@@ -1247,6 +1247,58 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783000700010,
+      "title": "Maya: validar desconto de mercado para Kit 3un (A1) antes de fixar preço promo",
+      "desc": "Vera avaliou faixa R$104,90-R$109,90 (dentro da faixa de frete R$100-119,99, âncora R$115,00) como candidata provisória, mas marcado como NÃO VERIFICADO comercialmente. Pesquisar desconto % praticado por concorrentes em kits de 3 unidades de óculos de leitura no ML. Gabriel também cogitou R$72,00 (desconto de 37,4%) — Vera não recomendou por quebrar a faixa de frete definida e risco de canibalização alto do A2 (ficaria R$24/unidade efetiva vs R$38,72 do A2 unitário). Validar com dado de mercado antes de decidir.",
+      "agent": "Maya",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura – Kit 3 Unidades (A1)",
+      "date": "2026-07-09",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783000700011,
+      "title": "Gabriel: tentar criar campanha de Ads do Anúncio 3 (Leitura Kit Limpeza) novamente",
+      "desc": "Anúncio 3 (publicado 06/07) ainda não aparece no painel do Mercado Ads para criação de campanha — provável delay de indexação de anúncio novo (24-48h). Tentar novamente hoje/amanhã.",
+      "agent": "Gabriel",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-08",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783000700012,
+      "title": "Leo: checkpoint conversão A3 + revisão teste de Ads (se ativo)",
+      "desc": "Revisar dado orgânico do A3 (Leitura unitário + Kit Limpeza) e, se a campanha de teste tiver sido ativada, cruzar com resultado de Ads: ROAS mínimo necessário 4,34x, ACOS máximo 23%, orçamento teste R$15-20/dia por 3 dias (teto R$60). Critério de sucesso: 2-3 vendas via Ads com ACOS <= 23%. Critério de parada: ACOS > 23% sustentado ou zero vendas em 3 dias. Decidir ESCALAR/MANTER TESTE/PAUSAR.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-09",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783000700013,
+      "title": "Gabriel: abrir chamado ML se Anúncio 3 não aparecer no Mercado Ads até 08/07",
+      "desc": "Se após nova tentativa o Anúncio 3 (Leitura Kit Limpeza) continuar não aparecendo como elegível para campanha no painel do Mercado Ads, abrir chamado com o suporte do ML.",
+      "agent": "Gabriel",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura Kit Limpeza (A3)",
+      "date": "2026-07-08",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
     }
   ],
   "contas": [
