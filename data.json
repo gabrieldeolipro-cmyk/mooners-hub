@@ -3,14 +3,14 @@
     {
       "id": 1,
       "title": "Aumentar ROAS objetivo da campanha Leitura para 4,5x",
-      "desc": "Ajustar campanha existente para preservar histórico de aprendizado. Não criar campanha nova.",
+      "desc": "Ajustar campanha existente para preservar histórico de aprendizado. Não criar campanha nova. [Executado em 07/07/2026.]",
       "agent": "Leo",
       "canal": "Mercado Livre",
       "anuncio": "Leitura (MLB64402148)",
       "date": "2026-06-23",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-22"
     },
     {
@@ -22,8 +22,8 @@
       "anuncio": "Leitura +0.75",
       "date": "2026-06-23",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-22"
     },
     {
@@ -33,7 +33,7 @@
       "agent": "Leo",
       "canal": "Mercado Livre",
       "anuncio": "Leitura",
-      "date": "2026-06-30",
+      "date": "2026-07-14",
       "priority": "normal",
       "status": "waiting",
       "done": false,
@@ -61,8 +61,8 @@
       "anuncio": "Leitura — Anúncio 3",
       "date": "2026-06-25",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
@@ -87,8 +87,8 @@
       "anuncio": "Crystal Solar",
       "date": "2026-06-25",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
@@ -100,21 +100,21 @@
       "anuncio": "Crystal Solar",
       "date": "2026-06-25",
       "priority": "normal",
-      "status": "waiting",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
       "id": 1750889000001,
       "title": "Vera: decidir Ads + pricing Crystal Solar",
-      "desc": "Com base na pesquisa Maya #008: (1) Eliminar R9 de todas as variações Crystal — migrar para R9 ou R9. (2) Reativar Ads Crystal após quitação da fatura — ROAS mínimo 4,03x (R9) ou 3,73x (R9). (3) Decidir qual variação testar a R9 primeiro (sugestão: champanhe ou degradê). (4) Avaliar adição de Clips ao anúncio Crystal.",
+      "desc": "Com base na pesquisa Maya #008: (1) Eliminar R9 de todas as variações Crystal — migrar para R9 ou R9. (2) Reativar Ads Crystal após quitação da fatura — ROAS mínimo 4,03x (R9) ou 3,73x (R9). (3) Decidir qual variação testar a R9 primeiro (sugestão: champanhe ou degradê). (4) Avaliar adição de Clips ao anúncio Crystal. [Decisão de preço tomada — consolidada com a tarefa de handoff Maya→Vera. Falta apenas ATIVAR os Ads (nova tarefa criada: id key 'ativar-ads-crystal-solar').]",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Crystal Solar (CRYSTAL-ROSA/MARROM/CINZA/DEGRADE/CHAMPANHE/AZUL/AMARELO)",
       "date": "2026-06-26",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
@@ -126,8 +126,8 @@
       "anuncio": "Crystal Solar (referência)",
       "date": "2026-07-02",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
@@ -152,8 +152,8 @@
       "anuncio": "-",
       "date": "2026-07-05",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
@@ -302,14 +302,14 @@
     {
       "id": 1783000000001,
       "title": "[EMERGÊNCIA] Zerar fila de pendências antes da reativação de Ads",
-      "desc": "Ordem: 1) Sol: Image 8 A3 (remover 'lenço mágico'). 2) Estoque Leitura +1.25/+2.00. 3) Leo: Crystal Solar. 4) Vera: Crystal Solar (preço+Ads). 5) Maya: concorrente #226.",
+      "desc": "Ordem: 1) Sol: Image 8 A3 (remover 'lenço mágico'). 2) Estoque Leitura +1.25/+2.00. 3) Leo: Crystal Solar. 4) Vera: Crystal Solar (preço+Ads). 5) Maya: concorrente #226. [TODOS OS 5 ITENS CONCLUÍDOS em 07/07/2026: imagem 8 corrigida, estoque reposto, diagnóstico Crystal feito, decisão de preço Crystal feita, concorrente #226 investigado. Falta apenas ativar Ads no Crystal Solar (tarefa separada).]",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Leitura A3 / Crystal Solar",
       "date": "2026-07-08",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
@@ -1199,28 +1199,41 @@
     {
       "id": 1783000000070,
       "title": "Verificar imagens de variação — 15 graus Anúncio 3",
-      "desc": "Confirmar que as 15 imagens de variação por grau (+0,50 ao +4,00) foram subidas corretamente no ML, uma por variação. Verificar se o grau aparece legível no canto inferior direito de cada imagem.",
+      "desc": "Confirmar que as 15 imagens de variação por grau (+0,50 ao +4,00) foram subidas corretamente no ML, uma por variação. Verificar se o grau aparece legível no canto inferior direito de cada imagem. [CANCELADO: ML não permite capa/imagem de variação com grau impresso. Não aplicável.]",
       "agent": "Sol",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
       "date": "2026-07-07",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "cancelled",
+      "done": true,
       "createdAt": "2026-07-06"
     },
     {
       "id": 1783000000071,
       "title": "Incluir Anúncio 3 em campanha de Ads quando reativar",
-      "desc": "Quando os Ads do ML forem reativados, incluir o Anúncio 3 (Leitura Kit Limpeza) na campanha. Calcular ACOS máximo suportável e ROAS mínimo com base no preço promocional R4,90. Coordenar com Leo e Vera.",
+      "desc": "Ads do ML foram reativados em 07/07/2026. Incluir o Anúncio 3 (Leitura Kit Limpeza) na campanha. Calcular ACOS máximo suportável e ROAS mínimo com base no preço promocional R$54,90. Coordenar com Leo e Vera.",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
-      "date": "2026-07-20",
-      "priority": "normal",
-      "status": "waiting",
+      "date": "2026-07-08",
+      "priority": "urgent",
+      "status": "pending",
       "done": false,
       "createdAt": "2026-07-06"
+    },
+    {
+      "id": 1783000700001,
+      "title": "Ativar Ads no Crystal Solar (preço e ROAS já definidos)",
+      "desc": "Decisão de preço e ROAS objetivo já tomada por Vera (25/06-02/07). Falta apenas executar a ativação da campanha de Ads no ML para o Crystal Solar. Confirmar ROAS objetivo por faixa de preço antes de ativar.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Crystal Solar",
+      "date": "2026-07-08",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
     }
   ],
   "contas": [
@@ -1275,5 +1288,5 @@
       "paga": false
     }
   ],
-  "lastUpdated": "2026-07-06"
+  "lastUpdated": "2026-07-07"
 }
