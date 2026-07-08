@@ -209,6 +209,7 @@
             <button class="filter-btn active" onclick="setTaskFilter('all',this)">Todas</button>
             <button class="filter-btn" onclick="setTaskFilter('urgent',this)">Urgente</button>
             <button class="filter-btn" onclick="setTaskFilter('pending',this)">Pendente</button>
+            <button class="filter-btn" onclick="setTaskFilter('waiting',this)">Aguardando</button>
           </div>
         </div>
         <div class="task-list" id="task-list"></div>
@@ -420,6 +421,7 @@ function getTaskList() {
   if(canalFilter) list=list.filter(t=>t.canal===canalFilter);
   if(taskFilter==='urgent') list=list.filter(t=>t.priority==='urgent');
   if(taskFilter==='pending') list=list.filter(t=>t.status==='pending');
+  if(taskFilter==='waiting') list=list.filter(t=>t.status==='waiting');
   list.sort((a,b)=>{
     if(a.done!==b.done) return a.done?1:-1;
     if(a.priority==='urgent'&&b.priority!=='urgent') return -1;
