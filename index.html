@@ -564,6 +564,14 @@ function filterCanal(c,el) {
 
 function setTaskFilter(f,el) {
   taskFilter=f;
+  if (f !== 'all') {
+    currentView='todas';
+    document.getElementById('topbar-title').textContent='Todas as Tarefas';
+    document.getElementById('task-section-title').textContent='Todas as Tarefas';
+    document.querySelectorAll('#nav-tasks .nav-item').forEach(i=>i.classList.remove('active'));
+    const todasNav = document.querySelector('#nav-tasks .nav-item[onclick*="\'todas\'"]');
+    if (todasNav) todasNav.classList.add('active');
+  }
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active'); renderTasks();
 }
