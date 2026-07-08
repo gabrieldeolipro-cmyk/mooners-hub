@@ -318,14 +318,14 @@ async function loadData() {
 }
 
 // Gravar via Worker. Toda mutação (toggle, criar, apagar) chama isso.
-async function pushData(commitMessage) {
+async function pushData(commitMessage, extra) {
   syncing = true;
   setSyncStatus('sincronizando...', false);
-  const body = {
+  const body = Object.assign({
     tasks: tasks,
     contas,
     message: commitMessage || 'Atualização via Mooners Hub app'
-  };
+  }, extra || {});
   try {
     const r = await fetch(WORKER_URL, {
       method: 'POST',
@@ -334,17 +334,12 @@ async function pushData(commitMessage) {
     });
     const res = await r.json();
     if (!r.ok || !res.ok) throw new Error(res.error || 'erro ao gravar');
-    localStorage.setItem('mooners_cache', JSON.stringify({ tasks: body.tasks, contas: body.contas }));
-    setSyncStatus(`sincronizado agora (${new Date().toLocaleTimeString('pt-BR')})`, false);
+    // O servidor faz merge (nao sobrescreve) — recarrega pra refletir o estado
+    // real apos a mescla, incluindo qualquer coisa adicionada por outra sessao.
+    await loadData();
   } catch (e) {
     console.error(e);
-    // sha desatualizado (alguém mais escreveu nesse meio-tempo) — recarrega e avisa
-    if (String(e.message).toLowerCase().includes('sha')) {
-      setSyncStatus('conflito de versão — recarregando dados mais recentes...', true);
-      await loadData();
-    } else {
-      setSyncStatus('falha ao sincronizar — verifique a internet e tente de novo', true);
-    }
+    setSyncStatus('falha ao sincronizar — verifique a internet e tente de novo', true);
   }
   syncing = false;
 }
@@ -519,7 +514,7 @@ function deleteConta(id) {
   const c = contas.find(c=>c.id===id);
   contas=contas.filter(c=>c.id!==id);
   renderContas();
-  pushData(`Remover conta: ${c ? c.nome : id}`);
+  pushData(`Remover conta: ${c ? c.nome : id}`, { deletedContaIds: [id] });
 }
 
 // ══ VIEWS ══════════════════════════════════════════════════════
