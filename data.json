@@ -1299,6 +1299,71 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783100000001,
+      "title": "Leo: raio-x de lucratividade e necessidade de Ads por SKU (Bloco 0)",
+      "desc": "Calcular economia unitária no preço atual de cada SKU ativo (Leitura A1/A2/A3, Crystal Solar, Night Drive Oceano Amarelo, Night Drive Black Edition, Wayfarer, NG-Crystal, Solar Black, Leitura Blue). Classificar em: PODE ESCALAR ADS / ADS COM CAUTELA / ADS NAO RECOMENDADO AGORA / SEM ADS-SO ORGANICO. Ranquear por lucro real, nao faturamento.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Todos os SKUs ativos",
+      "date": "2026-07-10",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783100000002,
+      "title": "Nina: regra de estoque min/max + cronograma de Full (Bloco 2)",
+      "desc": "Aplicar regra por SKU: ML so Full, maximo 30 dias / minimo 7 dias (padrao); excecao Night Drive Oceano Amarelo (importado): maximo 60 dias / minimo 30 dias. Calcular cobertura atual estimada por SKU, apontar quem precisa reposicao urgente e quem esta com excesso. Montar regua de frequencia/quantidade de envio ao Full por fornecedor (lead time).",
+      "agent": "Nina",
+      "canal": "Mercado Livre",
+      "anuncio": "Todos os SKUs ativos",
+      "date": "2026-07-10",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783100000003,
+      "title": "Atualizar Bling: incluir SKU do Anuncio 3 (Leitura Kit Limpeza)",
+      "desc": "Depende do resultado do Bloco 2 (Nina) para regra de estoque. Cadastrar A3 no Bling com controle de estoque proprio.",
+      "agent": "Gabriel",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura A3",
+      "date": "2026-07-11",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783100000004,
+      "title": "[ROADMAP] TikTok Shop: retorno (o que e como voltar)",
+      "desc": "Fluxo definido: Maya (pesquisa mercado TikTok) -> Nina (raio-x operacao atual) -> Max (decisao estrategica) -> Vera (plano de execucao). So iniciar APOS Shopee Fase 2 estar rodando com consistencia. Inclui avaliar Programa de Afiliados TikTok (principal alavanca do canal) como parte do plano de retorno.",
+      "agent": "Max",
+      "canal": "TikTok Shop",
+      "anuncio": "A definir (1 SKU campeao validado)",
+      "date": "2026-08-15",
+      "priority": "low",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783100000005,
+      "title": "[ROADMAP] Ativar Afiliados Shopee",
+      "desc": "Programa de afiliados Shopee esta parado, marcado como 'avaliar urgente' nas regras de marketplace. Incorporar como um dos primeiros itens dentro do planejamento da Fase 2 do Shopee (junto com Nina).",
+      "agent": "Nina",
+      "canal": "Shopee",
+      "anuncio": "Geral",
+      "date": "2026-08-04",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-07"
     }
   ],
   "contas": [
