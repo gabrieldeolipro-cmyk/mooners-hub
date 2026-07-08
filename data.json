@@ -1,6 +1,7 @@
 {
   "tasks": [
     {
+      "source": "agent",
       "id": 1,
       "title": "Aumentar ROAS objetivo da campanha Leitura para 4,5x",
       "desc": "Ajustar campanha existente para preservar histórico de aprendizado. Não criar campanha nova. [Executado em 07/07/2026.]",
@@ -14,6 +15,7 @@
       "createdAt": "2026-06-22"
     },
     {
+      "source": "agent",
       "id": 2,
       "title": "Repor estoque variação L-075 no Full com urgência",
       "desc": "Grau mais visitado nos últimos 7 dias. Com 4 unidades no Full, o ML pode estar limitando exposição do anúncio.",
@@ -27,6 +29,7 @@
       "createdAt": "2026-06-22"
     },
     {
+      "source": "agent",
       "id": 3,
       "title": "Medir ACOS da campanha Leitura após ajuste de ROAS",
       "desc": "Critério de sucesso: ACOS ≤ 25,3% com ≥ 15 vendas/semana. Critério de parada: ACOS > 30% após 7 dias.",
@@ -40,6 +43,7 @@
       "createdAt": "2026-06-22"
     },
     {
+      "source": "agent",
       "id": 4,
       "title": "Pesquisa de mercado — óculos de leitura (background)",
       "desc": "Preços, capas dominantes, kits dos concorrentes. Inteligência para quando Vera precisar decidir.",
@@ -53,6 +57,7 @@
       "createdAt": "2026-06-22"
     },
     {
+      "source": "agent",
       "id": 5,
       "title": "Criar Anúncio 3 — Leitura unitário + kit limpeza",
       "desc": "Criar novo anúncio: 1 óculos + estojo + flanela + cordão + kit limpeza. Preço: R$54,90 promocional, âncora R$79,90. Kit limpeza deve aparecer explicitamente no título e na capa. Todos os graus como variação. Anúncio 2 (kit 3) mantido ativo — monitorar canibalização.",
@@ -66,6 +71,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 6,
       "title": "Medir desempenho Anúncio 3 Leitura + canibalização A1",
       "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. Decidir sobre Ads no A3 com base nos dados.",
@@ -79,6 +85,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 1782419662927,
       "title": "Maya: pesquisa mercado Crystal Solar ML",
       "desc": "Pesquisar óculos de sol armação transparente / crystal no Mercado Livre. OBRIGATÓRIO: (1) Aba Análise de Mercado ML → categoria Acessório de Moda → subcategoria Óculos → analisar posição Mooners e concorrentes reais (excluir marcas premium). (2) JoomPulse → concorrentes identificados na análise ML → portfólio, preços, volume, tendência. Outputs esperados: faixa de preço dominante (Mooners está em R$69–89), capas que convertem, se existe espaço em preço acima de R$69, lacunas de posicionamento por cor. Entregar handoff para Vera com recomendação de preço e ROAS objetivo.",
@@ -92,6 +99,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 1782419662928,
       "title": "Vera: decisão preço e ROAS Crystal Solar pós-Maya",
       "desc": "Após receber handoff da Maya com dados de mercado Crystal Solar: (1) Definir preço final de cada variação (R$69, R$79 ou R$89 — ou ajuste). Atenção: cruzar R$79 aumenta frete de R$7,75 para R$12,35, reduzindo margem. (2) Definir ROAS objetivo para campanha de Ads. Referência Leo: R$69→ROAS mín 4,0x | R$79→4,3x | R$89→3,7x. (3) Decidir se Ads roda por catálogo ou por anúncio principal. Registrar decisão no Diário.",
@@ -105,6 +113,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 1750889000001,
       "title": "Vera: decidir Ads + pricing Crystal Solar",
       "desc": "Com base na pesquisa Maya #008: (1) Eliminar R9 de todas as variações Crystal — migrar para R9 ou R9. (2) Reativar Ads Crystal após quitação da fatura — ROAS mínimo 4,03x (R9) ou 3,73x (R9). (3) Decidir qual variação testar a R9 primeiro (sugestão: champanhe ou degradê). (4) Avaliar adição de Clips ao anúncio Crystal. [Decisão de preço tomada — consolidada com a tarefa de handoff Maya→Vera. Falta apenas ATIVAR os Ads (nova tarefa criada: id key 'ativar-ads-crystal-solar').]",
@@ -118,6 +127,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 1750889000002,
       "title": "Maya: investigar NIQUEL.ABELHA.DUPLAS (#226 — 4,1% conversão)",
       "desc": "Concorrente mais eficiente da vizinhança da Mooners na categoria Óculos ML. Usar Comparar-me no painel ML para ver portfólio de anúncios, preços, condições de venda e estratégia. Entender por que converte 4,1% vs 2,3% da Mooners.",
@@ -131,6 +141,7 @@
       "createdAt": "2026-06-25"
     },
     {
+      "source": "agent",
       "id": 1782923425090,
       "title": "Revisar fim da campanha 7/7 e buscar nova promoção",
       "desc": "Campanha 7/7 (\"7/7 MODA em Oferta\" / \"07.07 e Descontaço\") — todos os SKUs e variações participantes têm vigência até 20/07. SKUs: Crystal Transparente, Leitura +1,50 c/ Brinde, Night Drive Lente Amarela, Wayfarer Preto, Leitura S/Aro Filtro Azul, Kit 3 Leitura, Black Edition. Ação: conferir vendas/resultado de cada SKU na campanha, verificar no painel /anuncios/lista/promos quais novas promoções estão disponíveis, e repetir análise de margem (Leo) antes de participar de novo.",
@@ -144,6 +155,7 @@
       "createdAt": "2026-07-01"
     },
     {
+      "source": "agent",
       "id": 1751673600000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 1 de 12 ocorrências]",
@@ -157,6 +169,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1754352000000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 2 de 12 ocorrências]",
@@ -170,6 +183,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1757030400000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 3 de 12 ocorrências]",
@@ -183,6 +197,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1759622400000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 4 de 12 ocorrências]",
@@ -196,6 +211,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1762300800000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 5 de 12 ocorrências]",
@@ -209,6 +225,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1764892800000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 6 de 12 ocorrências]",
@@ -222,6 +239,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1767571200000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 7 de 12 ocorrências]",
@@ -235,6 +253,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1770249600000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 8 de 12 ocorrências]",
@@ -248,6 +267,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1772668800000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 9 de 12 ocorrências]",
@@ -261,6 +281,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1775347200000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 10 de 12 ocorrências]",
@@ -274,6 +295,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1777939200000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 11 de 12 ocorrências]",
@@ -287,6 +309,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1780617600000,
       "title": "Subir XML para contabilidade",
       "desc": "Tarefa mensal — subir XML para contabilidade. Janela de execução: dia 1 a dia 5. Prazo final: dia 5. [Pré-carregada em lote em 02/07/2026 — 12 de 12 ocorrências] ⚠️ ESTA É A ÚLTIMA OCORRÊNCIA DO LOTE — ao concluir esta tarefa, criar novo lote para jul/2027–jun/2028 ou automatizar via Make.",
@@ -300,6 +323,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000001,
       "title": "[EMERGÊNCIA] Zerar fila de pendências antes da reativação de Ads",
       "desc": "Ordem: 1) Sol: Image 8 A3 (remover 'lenço mágico'). 2) Estoque Leitura +1.25/+2.00. 3) Leo: Crystal Solar. 4) Vera: Crystal Solar (preço+Ads). 5) Maya: concorrente #226. [TODOS OS 5 ITENS CONCLUÍDOS em 07/07/2026: imagem 8 corrigida, estoque reposto, diagnóstico Crystal feito, decisão de preço Crystal feita, concorrente #226 investigado. Falta apenas ativar Ads no Crystal Solar (tarefa separada).]",
@@ -313,6 +337,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000002,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -326,6 +351,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000003,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -339,6 +365,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000004,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -352,6 +379,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000005,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -365,6 +393,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000006,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -378,6 +407,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000007,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -387,10 +417,11 @@
       "date": "2026-07-08",
       "priority": "urgent",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000008,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -404,6 +435,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000009,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -417,6 +449,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000010,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -430,6 +463,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000011,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -443,6 +477,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000012,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -456,6 +491,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000013,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -469,6 +505,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000014,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -482,6 +519,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000015,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -495,6 +533,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000016,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -508,6 +547,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000017,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -521,6 +561,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000018,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -534,6 +575,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000019,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -547,6 +589,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000020,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -560,6 +603,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000021,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -573,6 +617,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000022,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -586,6 +631,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000023,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -599,6 +645,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000024,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -612,6 +659,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000025,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -625,6 +673,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000026,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -638,6 +687,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000027,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -651,6 +701,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000028,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -664,6 +715,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000029,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias).",
@@ -677,6 +729,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000030,
       "title": "[ROTINA DIÁRIA ML] Check operacional: vendas, perguntas, estoque",
       "desc": "1) Vendas orgânicas vs. fatura ML. 2) Responder perguntas ML (+Shopee manutenção). 3) Cobertura Full SKUs 7/7 (alerta <10 dias). | OBS REVISÃO: Ads reativados? SIM → Diário redesenha checklist diário pós-emergência e recria série. NÃO → recriar diárias por mais 15 dias e revisar novamente.",
@@ -690,6 +743,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000031,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -703,6 +757,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000032,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -716,6 +771,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000033,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -729,6 +785,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000034,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -742,6 +799,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000035,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -755,6 +813,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000036,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -768,6 +827,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000037,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -781,6 +841,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000038,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -794,6 +855,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000039,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -807,6 +869,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000040,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -820,6 +883,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000041,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -833,6 +897,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000042,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -846,6 +911,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000043,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -859,6 +925,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000044,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -872,6 +939,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000045,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -885,6 +953,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000046,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -898,6 +967,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000047,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -911,6 +981,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000048,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -924,6 +995,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000049,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -937,6 +1009,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000050,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -950,6 +1023,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000051,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -963,6 +1037,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000052,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -976,6 +1051,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000053,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -989,6 +1065,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000054,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -1002,6 +1079,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000055,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária.",
@@ -1015,6 +1093,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000056,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
@@ -1028,6 +1107,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000057,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores.",
@@ -1041,6 +1121,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000058,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub.",
@@ -1054,6 +1135,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000059,
       "title": "[ROTINA SEMANAL ML - SEG] Leo: diagnóstico da semana anterior",
       "desc": "Colar dados de vendas por SKU (+Ads quando reativados). Output: funil, veredito financeiro, 1 ação prioritária. | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
@@ -1067,6 +1149,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000060,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
       "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer. | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
@@ -1080,6 +1163,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000061,
       "title": "[ROTINA SEMANAL - QUI] Sol: conteúdo da semana",
       "desc": "3 posts + 2 stories de ativos existentes. Pilares: Produto + Prova Social + Bastidores. | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
@@ -1093,6 +1177,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000062,
       "title": "[ROTINA SEMANAL ML - SEX] Diário: registro da semana",
       "desc": "Registrar mudanças, resultados, testes. Atualizar diario-registros.md e Hub. | OBS REVISÃO: checar adesão às 8 semanas de rotina semanal. ≥6/8 semanas cumpridas → recriar por mais 8 semanas. <6/8 → acionar Nina para diagnóstico antes de recriar.",
@@ -1106,6 +1191,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000063,
       "title": "[ROTINA MENSAL ML] Raio-x Nina + mídia Leo + validação Max",
       "desc": "Dia 1-7: 1) Nina raio-x (foco ML). 2) Leo ACOS/ROAS/TACOS por SKU no Mercado Ads. 3) Max valida 30/60/90. 4) Maya pesquisa 1 SKU rotativo ML (ago: Crystal, set: Night Drive, out: Leitura). 5) Conferir custos/taxas vs regras-marketplaces.md. 6) Sol calendário. 7) Check manutenção Shopee (5 min: anúncios ativos, estoque, Vendedor Indicado).",
@@ -1119,6 +1205,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000064,
       "title": "[ROTINA MENSAL ML] Raio-x Nina + mídia Leo + validação Max",
       "desc": "Dia 1-7: 1) Nina raio-x (foco ML). 2) Leo ACOS/ROAS/TACOS por SKU no Mercado Ads. 3) Max valida 30/60/90. 4) Maya pesquisa 1 SKU rotativo ML (ago: Crystal, set: Night Drive, out: Leitura). 5) Conferir custos/taxas vs regras-marketplaces.md. 6) Sol calendário. 7) Check manutenção Shopee (5 min: anúncios ativos, estoque, Vendedor Indicado).",
@@ -1132,6 +1219,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000065,
       "title": "[ROTINA MENSAL ML] Raio-x Nina + mídia Leo + validação Max",
       "desc": "Dia 1-7: 1) Nina raio-x (foco ML). 2) Leo ACOS/ROAS/TACOS por SKU no Mercado Ads. 3) Max valida 30/60/90. 4) Maya pesquisa 1 SKU rotativo ML (ago: Crystal, set: Night Drive, out: Leitura). 5) Conferir custos/taxas vs regras-marketplaces.md. 6) Sol calendário. 7) Check manutenção Shopee (5 min: anúncios ativos, estoque, Vendedor Indicado). | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
@@ -1145,6 +1233,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000066,
       "title": "[ROTINA TRIMESTRAL] Portfólio + cenário 90d + auditoria (Q4/26)",
       "desc": "1) Nina+Vera: matriz de portfólio ML (escalar/corrigir/pausar). 2) Max: cenário 90d + alocação de capital + avaliar gatilho Fase 2 Shopee. 3) Nina: auditoria ferramentas (JoomPulse/Bling/Letzee). 4) Gabriel: fornecedores e plano de reposição.",
@@ -1158,6 +1247,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000067,
       "title": "[ROTINA TRIMESTRAL] Portfólio + cenário 90d + auditoria (Q1/27)",
       "desc": "1) Nina+Vera: matriz de portfólio ML (escalar/corrigir/pausar). 2) Max: cenário 90d + alocação de capital + avaliar gatilho Fase 2 Shopee. 3) Nina: auditoria ferramentas (JoomPulse/Bling/Letzee). 4) Gabriel: fornecedores e plano de reposição. | OBS: última da série — revisar continuidade da rotina e recriar recorrência (ou automatizar).",
@@ -1171,6 +1261,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000068,
       "title": "[FASE 2 - CONDICIONAL] Desenhar rotina Shopee dedicada",
       "desc": "Gatilho (Max decide): Ads ML reativados e estáveis + fila pendências zerada + rotina semanal ML rodando 4 semanas sem falha. Aí: Nina desenha rotina Shopee com mesmo processo, canal separado.",
@@ -1184,6 +1275,7 @@
       "createdAt": "2026-07-02"
     },
     {
+      "source": "agent",
       "id": 1783000000069,
       "title": "Checkpoint de conversão — Anúncio 3 Leitura Kit Limpeza",
       "desc": "Revisar CTR e conversão do Anúncio 3 (Leitura Kit Limpeza) 14 dias após publicação (06/07/2026). Critério de sucesso: conversão >= 4% e CTR >= 3%. Critério de parada: conversão < 2% em 7 dias com mínimo de 100 visitas.",
@@ -1197,6 +1289,7 @@
       "createdAt": "2026-07-06"
     },
     {
+      "source": "agent",
       "id": 1783000000070,
       "title": "Verificar imagens de variação — 15 graus Anúncio 3",
       "desc": "Confirmar que as 15 imagens de variação por grau (+0,50 ao +4,00) foram subidas corretamente no ML, uma por variação. Verificar se o grau aparece legível no canto inferior direito de cada imagem. [CANCELADO: ML não permite capa/imagem de variação com grau impresso. Não aplicável.]",
@@ -1210,19 +1303,21 @@
       "createdAt": "2026-07-06"
     },
     {
+      "source": "agent",
       "id": 1783000000071,
       "title": "Incluir Anúncio 3 em campanha de Ads quando reativar",
-      "desc": "BLOQUEADO: Mercado Livre confirmou instabilidade na plataforma (chamado aberto em 08/07). Aguardando ML resolver antes de tentar novamente. Nao e uma decisao estrategica, e um bug externo.",
+      "desc": "Ads do ML foram reativados em 07/07/2026. Incluir o Anúncio 3 (Leitura Kit Limpeza) na campanha. Calcular ACOS máximo suportável e ROAS mínimo com base no preço promocional R$54,90. Coordenar com Leo e Vera.",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
-      "date": "2026-07-10",
+      "date": "2026-07-08",
       "priority": "urgent",
-      "status": "waiting",
+      "status": "pending",
       "done": false,
       "createdAt": "2026-07-06"
     },
     {
+      "source": "agent",
       "id": 1783000700001,
       "title": "Ativar Ads no Crystal Solar — ADIADO até checkpoint 21/07",
       "desc": "Decisão de Vera (07/07): NÃO ativar agora. Motivos: (1) ainda dentro da janela de validação do piso de preço fixado em 01/07 (só 7 dias de dado); (2) confirmado que ML não permite segmentar Ads por variação em anúncio de catálogo — só dá pra rodar pro anúncio inteiro. Estoque OK. Reavaliar ativação (anúncio inteiro, ROAS mín 8,8x-13,4x) somente após checkpoint de 21/07 confirmar que lucro/dia se sustenta.",
@@ -1236,6 +1331,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783000700002,
       "title": "Checkpoint: revisar sustentação do piso de preço Crystal Solar e decidir Ads",
       "desc": "Verificar se lucro/dia do Crystal Solar se mantém acima de R$25-30/dia (baseline promo: R$34,31/dia em 7 dias, vs. R$18,54/dia pré-promo). Se confirmado sustentável, ativar Ads (anúncio inteiro, ROAS mín 8,8x-13,4x conforme variação). Se cair para perto de R$18-20/dia, reavaliar preço. Referência: Diário Mooners #005.",
@@ -1249,6 +1345,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783000700010,
       "title": "Maya: validar desconto de mercado para Kit 3un (A1) antes de fixar preço promo",
       "desc": "Vera avaliou faixa R$104,90-R$109,90 (dentro da faixa de frete R$100-119,99, âncora R$115,00) como candidata provisória, mas marcado como NÃO VERIFICADO comercialmente. Pesquisar desconto % praticado por concorrentes em kits de 3 unidades de óculos de leitura no ML. Gabriel também cogitou R$72,00 (desconto de 37,4%) — Vera não recomendou por quebrar a faixa de frete definida e risco de canibalização alto do A2 (ficaria R$24/unidade efetiva vs R$38,72 do A2 unitário). Validar com dado de mercado antes de decidir.",
@@ -1262,19 +1359,21 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783000700011,
       "title": "Gabriel: tentar criar campanha de Ads do Anúncio 3 (Leitura Kit Limpeza) novamente",
-      "desc": "Anúncio 3 (publicado 06/07) ainda não aparece no painel do Mercado Ads para criação de campanha — provável delay de indexação de anúncio novo (24-48h). Tentar novamente hoje/amanhã. [Tentado em 08/07 - nao foi possivel, ML com instabilidade confirmada.]",
+      "desc": "Anúncio 3 (publicado 06/07) ainda não aparece no painel do Mercado Ads para criação de campanha — provável delay de indexação de anúncio novo (24-48h). Tentar novamente hoje/amanhã.",
       "agent": "Gabriel",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
       "date": "2026-07-08",
       "priority": "urgent",
-      "status": "done",
-      "done": true,
+      "status": "pending",
+      "done": false,
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783000700012,
       "title": "Leo: checkpoint conversão A3 + revisão teste de Ads (se ativo)",
       "desc": "Revisar dado orgânico do A3 (Leitura unitário + Kit Limpeza) e, se a campanha de teste tiver sido ativada, cruzar com resultado de Ads: ROAS mínimo necessário 4,34x, ACOS máximo 23%, orçamento teste R$15-20/dia por 3 dias (teto R$60). Critério de sucesso: 2-3 vendas via Ads com ACOS <= 23%. Critério de parada: ACOS > 23% sustentado ou zero vendas em 3 dias. Decidir ESCALAR/MANTER TESTE/PAUSAR.",
@@ -1288,19 +1387,21 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783000700013,
       "title": "Gabriel: abrir chamado ML se Anúncio 3 não aparecer no Mercado Ads até 08/07",
-      "desc": "Se após nova tentativa o Anúncio 3 (Leitura Kit Limpeza) continuar não aparecendo como elegível para campanha no painel do Mercado Ads, abrir chamado com o suporte do ML. [Chamado aberto em 08/07 - ML confirmou instabilidade na plataforma.]",
+      "desc": "Se após nova tentativa o Anúncio 3 (Leitura Kit Limpeza) continuar não aparecendo como elegível para campanha no painel do Mercado Ads, abrir chamado com o suporte do ML.",
       "agent": "Gabriel",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
       "date": "2026-07-08",
       "priority": "normal",
-      "status": "done",
-      "done": true,
+      "status": "pending",
+      "done": false,
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783100000001,
       "title": "Leo: raio-x de lucratividade e necessidade de Ads por SKU (Bloco 0)",
       "desc": "Calcular economia unitária no preço atual de cada SKU ativo (Leitura A1/A2/A3, Crystal Solar, Night Drive Oceano Amarelo, Night Drive Black Edition, Wayfarer, NG-Crystal, Solar Black, Leitura Blue). Classificar em: PODE ESCALAR ADS / ADS COM CAUTELA / ADS NAO RECOMENDADO AGORA / SEM ADS-SO ORGANICO. Ranquear por lucro real, nao faturamento.",
@@ -1314,6 +1415,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783100000002,
       "title": "Nina: regra de estoque min/max + cronograma de Full (Bloco 2)",
       "desc": "Aplicar regra por SKU: ML so Full, maximo 30 dias / minimo 7 dias (padrao); excecao Night Drive Oceano Amarelo (importado): maximo 60 dias / minimo 30 dias. Calcular cobertura atual estimada por SKU, apontar quem precisa reposicao urgente e quem esta com excesso. Montar regua de frequencia/quantidade de envio ao Full por fornecedor (lead time).",
@@ -1327,6 +1429,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783100000003,
       "title": "Atualizar Bling: incluir SKU do Anuncio 3 (Leitura Kit Limpeza)",
       "desc": "Depende do resultado do Bloco 2 (Nina) para regra de estoque. Cadastrar A3 no Bling com controle de estoque proprio.",
@@ -1340,6 +1443,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783100000004,
       "title": "[ROADMAP] TikTok Shop: retorno (o que e como voltar)",
       "desc": "Fluxo definido: Maya (pesquisa mercado TikTok) -> Nina (raio-x operacao atual) -> Max (decisao estrategica) -> Vera (plano de execucao). So iniciar APOS Shopee Fase 2 estar rodando com consistencia. Inclui avaliar Programa de Afiliados TikTok (principal alavanca do canal) como parte do plano de retorno.",
@@ -1353,6 +1457,7 @@
       "createdAt": "2026-07-07"
     },
     {
+      "source": "agent",
       "id": 1783100000005,
       "title": "[ROADMAP] Ativar Afiliados Shopee",
       "desc": "Programa de afiliados Shopee esta parado, marcado como 'avaliar urgente' nas regras de marketplace. Incorporar como um dos primeiros itens dentro do planejamento da Fase 2 do Shopee (junto com Nina).",
@@ -1364,19 +1469,6 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-07"
-    },
-    {
-      "id": 1783200000001,
-      "title": "Acompanhar chamado no suporte ML (instabilidade Ads A3)",
-      "desc": "Chamado aberto em 08/07/2026. ML confirmou instabilidade na plataforma impedindo criacao de campanha de Ads para o Anuncio 3 (Leitura Kit Limpeza). Verificar periodicamente se foi resolvido.",
-      "agent": "Gabriel",
-      "canal": "Mercado Livre",
-      "anuncio": "Leitura A3",
-      "date": "2026-07-10",
-      "priority": "normal",
-      "status": "waiting",
-      "done": false,
-      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
