@@ -1439,7 +1439,7 @@
       "date": "2026-07-11",
       "priority": "normal",
       "status": "waiting",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-07"
     },
     {
@@ -1541,6 +1541,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783300000001,
       "title": "Ads Black Edition (ngsolardia) pausado - margem estava negativa",
       "desc": "Detectado no check diario de 08/07: venda com Ads ativo gerando margem NEGATIVA de -25,26%. Confirma analise anterior do Leo (ROAS minimo necessario ~45x, praticamente inviavel). Gabriel pausou os Ads no mesmo dia. Revisar futuramente se cabe reativar em preco/condicao diferente, ou manter apenas organico.",
@@ -1554,6 +1555,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000001,
       "title": "Bloco 1: confirmar cenario dos 5 catalogos criados pelo ML (Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue)",
       "desc": "ALERTA DE CONSISTENCIA: o Diario (registro #001) tem regra estrategica de que todos os catalogos da Mooners foram desativados (marca propria com estoque exclusivo nao tem vantagem em catalogo compartilhado). Se o ML esta com catalogo nesses 5 SKUs, precisa confirmar qual cenario: (a) catalogos antigos que nunca foram de fato desativados, (b) ML forcando catalogo automatico por categoria (comum em oculos), ou (c) a regra mudou e regras-marketplaces.md nao foi atualizado. Checar direto no painel ML se sao catalogos de fato ou variacoes mal identificadas. NAO apagar/pausar em nenhuma hipotese (pune ranking). Esta tarefa PRECEDE a tarefa de arrumar os catalogos. [RESOLVIDO 08/07: cenario (b) confirmado - catalogos sao criados automaticamente pelo ML por Gabriel ser Loja Oficial. Sao basicos por padrao. Excluir prejudica o algoritmo/ranking. Missao e ARRUMAR, nao excluir.]",
@@ -1567,6 +1569,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000002,
       "title": "Bloco 3: Solar Black - pesquisa de mercado completa antes de otimizar",
       "desc": "Sequencia completa: Maya (Analise de Mercado ML + JoomPulse + keyword/SEO + ranking + mapa de preco) -> Leo (economia unitaria no preco de mercado) -> Vera (decide reposicionar/Ads/prioridade) -> Sol (executa otimizacao de titulo/capa/galeria). Custo do produto: R$12,50 (registrado em 01/07).",
@@ -1580,6 +1583,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000003,
       "title": "Bloco 4: estudar possibilidade de novo SKU - Blue (oculos do Lui)",
       "desc": "Exploratorio, sem urgencia. Maya pesquisa mercado/viabilidade -> Vera decide se vale seguir.",
@@ -1593,6 +1597,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000004,
       "title": "Bloco 5: Instagram com cadencia minima autonoma (posts/reels/stories)",
       "desc": "Objetivo: parecer marca viva e ativa, sem virar operacao de geracao de conteudo pesada. Sol ajusta a regua de minimo esforco dentro da rotina semanal ja existente (quinta-feira).",
@@ -1606,6 +1611,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000005,
       "title": "Bloco 5: gravar clips novos de todos os SKUs (pessoa usando, informal)",
       "desc": "Depende do tempo do Gabriel para gravacao (Sol so fornece roteiro/prompt). Maior gargalo do bloco 5 - nao tem como delegar a execucao da gravacao.",
@@ -1619,6 +1625,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000006,
       "title": "Investigar erro de calculo de margem - LEITURA-BLUE-3",
       "desc": "Detectado no check diario de 08/07: painel do ML mostrou erro (simbolo de alerta) no calculo de Margem de Contribuicao para o SKU LEITURA-BLUE-3 (Oculos Leitura Sem Aro Filtro Azul 3.00, venda de R$85 as 08:28). Possivel falta de custo cadastrado no Letzee ou no ML. Verificar e corrigir cadastro.",
@@ -1632,6 +1639,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000007,
       "title": "Cartao de agradecimento + pedido de avaliacao - concluido",
       "desc": "Projeto fechado: texto final com trecho biblico (Mt 28:20), assinatura digitalizada do Gabriel, layout unico para todos os SKUs (10x12cm retrato). Arquivo final e folha A4 com marcas de corte ja gerados e prontos para impressao caseira ou grafica.",
@@ -1645,6 +1653,7 @@
       "createdAt": "2026-07-06"
     },
     {
+      "source": "agent",
       "id": 1783400000008,
       "title": "Bloco 3 (item 7): arrumar os 5 catalogos do ML apos cenario confirmado",
       "desc": "Depende da tarefa 'Bloco 1: confirmar cenario dos 5 catalogos' estar concluida. Para cada catalogo (Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue): elevar ao mesmo padrao de qualidade do A1/A3 da Leitura (titulo com keyword, imagens no padrao Mooners, ficha tecnica completa, descricao com FAQ). Nao precisa ser identico ao anuncio original, precisa atingir o mesmo nivel de qualidade.",
@@ -1658,6 +1667,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783400000009,
       "title": "Afiliados Mercado Livre - nao aplicavel",
       "desc": "Confirmado em regras-marketplaces.md: o Mercado Livre nao possui programa de afiliados externo para vendedores. Item removido do escopo — nao ha o que ativar aqui.",
@@ -1671,6 +1681,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783500000001,
       "title": "[ROTINA MENSAL GERAL - CONDICIONAL] Fechamento multicanal quando 2+ canais ativos",
       "desc": "Ainda nao ativa: hoje so o ML tem rotina mensal formal. Quando o Shopee (e depois o TikTok Shop) estiverem rodando com rotina propria estabelecida, a rotina mensal passa a ser um FECHAMENTO GERAL cruzando todos os canais ativos, nao so o ML isoladamente. Deve incluir: (1) lucratividade real SKU por SKU somando TODOS os canais onde ele vende (nao so ML), (2) decisao de quais SKUs precisam Ads em qual canal e quais nao precisam, (3) comparacao de desempenho entre canais (onde cada SKU performa melhor), (4) decisao de mix/prioridade de canal por SKU, sempre otimizando lucro real e reduzindo gasto desnecessario. Substitui/absorve a rotina mensal ML isolada quando ativada. Trigger: Shopee com rotina propria rodando ha pelo menos 1 mes.",
@@ -1684,6 +1695,7 @@
       "createdAt": "2026-07-08"
     },
     {
+      "source": "agent",
       "id": 1783200000001,
       "title": "Acompanhar chamado no suporte ML (instabilidade Ads A3)",
       "desc": "Chamado aberto em 08/07/2026. ML confirmou instabilidade na plataforma impedindo criacao de campanha de Ads para o Anuncio 3 (Leitura Kit Limpeza). Verificar periodicamente se foi resolvido. [Reconstituida em 08/07 - havia sido perdida por sobrescrita do app.]",
