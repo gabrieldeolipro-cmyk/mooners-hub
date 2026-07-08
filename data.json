@@ -1212,13 +1212,13 @@
     {
       "id": 1783000000071,
       "title": "Incluir Anúncio 3 em campanha de Ads quando reativar",
-      "desc": "Ads do ML foram reativados em 07/07/2026. Incluir o Anúncio 3 (Leitura Kit Limpeza) na campanha. Calcular ACOS máximo suportável e ROAS mínimo com base no preço promocional R$54,90. Coordenar com Leo e Vera.",
+      "desc": "BLOQUEADO: Mercado Livre confirmou instabilidade na plataforma (chamado aberto em 08/07). Aguardando ML resolver antes de tentar novamente. Nao e uma decisao estrategica, e um bug externo.",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
-      "date": "2026-07-08",
+      "date": "2026-07-10",
       "priority": "urgent",
-      "status": "pending",
+      "status": "waiting",
       "done": false,
       "createdAt": "2026-07-06"
     },
@@ -1264,14 +1264,14 @@
     {
       "id": 1783000700011,
       "title": "Gabriel: tentar criar campanha de Ads do Anúncio 3 (Leitura Kit Limpeza) novamente",
-      "desc": "Anúncio 3 (publicado 06/07) ainda não aparece no painel do Mercado Ads para criação de campanha — provável delay de indexação de anúncio novo (24-48h). Tentar novamente hoje/amanhã.",
+      "desc": "Anúncio 3 (publicado 06/07) ainda não aparece no painel do Mercado Ads para criação de campanha — provável delay de indexação de anúncio novo (24-48h). Tentar novamente hoje/amanhã. [Tentado em 08/07 - nao foi possivel, ML com instabilidade confirmada.]",
       "agent": "Gabriel",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
       "date": "2026-07-08",
       "priority": "urgent",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-07-07"
     },
     {
@@ -1290,14 +1290,14 @@
     {
       "id": 1783000700013,
       "title": "Gabriel: abrir chamado ML se Anúncio 3 não aparecer no Mercado Ads até 08/07",
-      "desc": "Se após nova tentativa o Anúncio 3 (Leitura Kit Limpeza) continuar não aparecendo como elegível para campanha no painel do Mercado Ads, abrir chamado com o suporte do ML.",
+      "desc": "Se após nova tentativa o Anúncio 3 (Leitura Kit Limpeza) continuar não aparecendo como elegível para campanha no painel do Mercado Ads, abrir chamado com o suporte do ML. [Chamado aberto em 08/07 - ML confirmou instabilidade na plataforma.]",
       "agent": "Gabriel",
       "canal": "Mercado Livre",
       "anuncio": "Leitura Kit Limpeza (A3)",
       "date": "2026-07-08",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-07-07"
     },
     {
@@ -1364,6 +1364,19 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-07"
+    },
+    {
+      "id": 1783200000001,
+      "title": "Acompanhar chamado no suporte ML (instabilidade Ads A3)",
+      "desc": "Chamado aberto em 08/07/2026. ML confirmou instabilidade na plataforma impedindo criacao de campanha de Ads para o Anuncio 3 (Leitura Kit Limpeza). Verificar periodicamente se foi resolvido.",
+      "agent": "Gabriel",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura A3",
+      "date": "2026-07-10",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
