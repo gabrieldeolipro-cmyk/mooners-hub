@@ -1539,6 +1539,19 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-08"
+    },
+    {
+      "id": 1783300000001,
+      "title": "Ads Black Edition (ngsolardia) pausado - margem estava negativa",
+      "desc": "Detectado no check diario de 08/07: venda com Ads ativo gerando margem NEGATIVA de -25,26%. Confirma analise anterior do Leo (ROAS minimo necessario ~45x, praticamente inviavel). Gabriel pausou os Ads no mesmo dia. Revisar futuramente se cabe reativar em preco/condicao diferente, ou manter apenas organico.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Night Drive Black Edition (ngsolardia)",
+      "date": "2026-07-08",
+      "priority": "urgent",
+      "status": "done",
+      "done": true,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
