@@ -270,11 +270,12 @@
 
 <script>
 // ══ DATA ═══════════════════════════════════════════════════════
-let agentTasks = [];   // vem do data.json (agentes)
-let manualTasks = JSON.parse(localStorage.getItem('mooners_manual_tasks') || '[]');
-let contas = JSON.parse(localStorage.getItem('mooners_contas_v2') || '[]');
+// GitHub é a ÚNICA fonte de verdade. O app fala com um Worker (proxy)
+// que guarda o token do GitHub escondido — o app nunca vê o token.
+const WORKER_URL = 'https://mooners-hub-proxy.gabrieldeolipro.workers.dev/';
 
 let tasks = [];
+let contas = [];
 let currentModule = 'tasks';
 let currentView = 'hoje';
 let currentContaView = 'pendentes';
@@ -282,43 +283,70 @@ let taskFilter = 'all';
 let agentFilter = null;
 let canalFilter = null;
 let contaTipoFilter = null;
+let syncing = false;
 
-// Carregar data.json do GitHub
+function setSyncStatus(msg, isError) {
+  const el = document.getElementById('last-sync');
+  el.textContent = msg;
+  el.style.color = isError ? 'var(--red)' : '';
+}
+
+// Carregar via Worker (que busca no GitHub) — instantâneo, sem delay de build
 async function loadData() {
   try {
-    const r = await fetch(`data.json?t=${Date.now()}`);
+    const r = await fetch(`${WORKER_URL}?t=${Date.now()}`);
+    if (!r.ok) throw new Error('Worker error ' + r.status);
     const d = await r.json();
-    agentTasks = d.tasks || [];
-    // Contas do JSON só se localStorage estiver vazio
-    if (contas.length === 0 && d.contas) {
-      contas = d.contas;
-      saveContas();
+    tasks = (d.tasks || []).map(t => ({ source: 'agent', ...t }));
+    contas = d.contas || [];
+    localStorage.setItem('mooners_cache', JSON.stringify(d)); // cache de emergência só
+    setSyncStatus(`sincronizado agora (${new Date().toLocaleTimeString('pt-BR')})`, false);
+  } catch (e) {
+    console.error(e);
+    const cache = JSON.parse(localStorage.getItem('mooners_cache') || 'null');
+    if (cache) {
+      tasks = (cache.tasks || []).map(t => ({ source: 'agent', ...t }));
+      contas = cache.contas || [];
+      setSyncStatus('offline — usando última cópia salva, mudanças não serão sincronizadas', true);
+    } else {
+      setSyncStatus('erro ao carregar (Worker fora do ar?)', true);
     }
-    document.getElementById('last-sync').textContent = `atualizado ${d.lastUpdated||'agora'}`;
-  } catch(e) {
-    document.getElementById('last-sync').textContent = 'offline — usando cache local';
   }
-  mergeTasks();
   renderTasks();
   renderContas();
 }
 
-function mergeTasks() {
-  // Marcar tarefas de agente como done se já marcadas localmente
-  const doneIds = JSON.parse(localStorage.getItem('mooners_done_ids') || '[]');
-  tasks = [
-    ...agentTasks.map(t => ({...t, source:'agent', done: doneIds.includes(t.id) || t.done})),
-    ...manualTasks.map(t => ({...t, source:'manual'}))
-  ];
+// Gravar via Worker. Toda mutação (toggle, criar, apagar) chama isso.
+async function pushData(commitMessage) {
+  syncing = true;
+  setSyncStatus('sincronizando...', false);
+  const body = {
+    tasks: tasks.map(({source, ...rest}) => rest),
+    contas,
+    message: commitMessage || 'Atualização via Mooners Hub app'
+  };
+  try {
+    const r = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    const res = await r.json();
+    if (!r.ok || !res.ok) throw new Error(res.error || 'erro ao gravar');
+    localStorage.setItem('mooners_cache', JSON.stringify({ tasks: body.tasks, contas: body.contas }));
+    setSyncStatus(`sincronizado agora (${new Date().toLocaleTimeString('pt-BR')})`, false);
+  } catch (e) {
+    console.error(e);
+    // sha desatualizado (alguém mais escreveu nesse meio-tempo) — recarrega e avisa
+    if (String(e.message).toLowerCase().includes('sha')) {
+      setSyncStatus('conflito de versão — recarregando dados mais recentes...', true);
+      await loadData();
+    } else {
+      setSyncStatus('falha ao sincronizar — verifique a internet e tente de novo', true);
+    }
+  }
+  syncing = false;
 }
-
-function saveDoneIds() {
-  const ids = tasks.filter(t=>t.done&&t.source==='agent').map(t=>t.id);
-  localStorage.setItem('mooners_done_ids', JSON.stringify(ids));
-}
-
-function saveManual() { localStorage.setItem('mooners_manual_tasks', JSON.stringify(manualTasks)); }
-function saveContas() { localStorage.setItem('mooners_contas_v2', JSON.stringify(contas)); }
 
 // ══ HELPERS ════════════════════════════════════════════════════
 function today() { return new Date().toISOString().split('T')[0]; }
@@ -467,13 +495,8 @@ function toggleTask(id, source) {
   const t=tasks.find(t=>t.id===id);
   if(!t) return;
   t.done=!t.done;
-  if(source==='agent') saveDoneIds();
-  else {
-    const m=manualTasks.find(t=>t.id===id);
-    if(m) m.done=!m.done;
-    saveManual();
-  }
   renderTasks();
+  pushData(`${t.done?'Concluir':'Reabrir'} tarefa: ${t.title}`);
 }
 
 function toggleConta(id) {
@@ -485,13 +508,16 @@ function toggleConta(id) {
     const next=new Date(now.getFullYear(),now.getMonth()+1,c.dia);
     c.vence=next.toISOString().split('T')[0];
   }
-  saveContas(); renderContas();
+  renderContas();
+  pushData(`${c.paga?'Pagar':'Reabrir'} conta: ${c.nome}`);
 }
 
 function deleteConta(id) {
   if(!confirm('Remover esta conta?')) return;
+  const c = contas.find(c=>c.id===id);
   contas=contas.filter(c=>c.id!==id);
-  saveContas(); renderContas();
+  renderContas();
+  pushData(`Remover conta: ${c ? c.nome : id}`);
 }
 
 // ══ VIEWS ══════════════════════════════════════════════════════
@@ -567,12 +593,13 @@ function saveTask() {
   const title=document.getElementById('t-title').value.trim();
   if(!title){alert('Título obrigatório');return;}
   const t={id:Date.now(),title,desc:document.getElementById('t-desc').value.trim(),agent:document.getElementById('t-agent').value,canal:document.getElementById('t-canal').value,anuncio:document.getElementById('t-anuncio').value.trim(),date:document.getElementById('t-date').value,priority:document.getElementById('t-priority').value,status:document.getElementById('t-status').value,done:false,source:'manual'};
-  manualTasks.push(t); saveManual();
+  tasks.push(t);
   closeModal('modal-task');
   ['t-title','t-desc','t-anuncio'].forEach(id=>document.getElementById(id).value='');
-  mergeTasks(); currentView='todas';
+  currentView='todas';
   document.getElementById('topbar-title').textContent='Todas as Tarefas';
   renderTasks();
+  pushData(`Nova tarefa: ${title}`);
 }
 
 function saveConta() {
@@ -583,9 +610,10 @@ function saveConta() {
   let vence=document.getElementById('c-vence').value;
   if(!vence&&dia) vence=nextVence(dia);
   contas.push({id:Date.now(),nome,tipo,valor:parseFloat(document.getElementById('c-valor').value)||null,dia,vence,obs:document.getElementById('c-obs').value.trim(),paga:false});
-  saveContas(); closeModal('modal-conta');
+  closeModal('modal-conta');
   ['c-nome','c-valor','c-dia','c-vence','c-obs'].forEach(id=>document.getElementById(id).value='');
   renderContas();
+  pushData(`Nova conta: ${nome}`);
 }
 
 // ══ INIT ═══════════════════════════════════════════════════════
