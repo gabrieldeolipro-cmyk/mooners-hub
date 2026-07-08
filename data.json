@@ -1682,6 +1682,19 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-08"
+    },
+    {
+      "id": 1783200000001,
+      "title": "Acompanhar chamado no suporte ML (instabilidade Ads A3)",
+      "desc": "Chamado aberto em 08/07/2026. ML confirmou instabilidade na plataforma impedindo criacao de campanha de Ads para o Anuncio 3 (Leitura Kit Limpeza). Verificar periodicamente se foi resolvido. [Reconstituida em 08/07 - havia sido perdida por sobrescrita do app.]",
+      "agent": "Gabriel",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura A3",
+      "date": "2026-07-10",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
