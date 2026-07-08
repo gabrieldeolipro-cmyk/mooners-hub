@@ -1469,6 +1469,20 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-07"
+    },
+    {
+      "source": "agent",
+      "id": 1783540375353,
+      "title": "[ROTINA SEMANAL ML - QUA] Vera: decisao da semana (com base no Leo)",
+      "desc": "Leo diagnosticou semana 01-08/07 (ML): campanha Ads 'Leitura' com ACOS 43,3% (teto sustentavel 34,6%) e ROAS 2,31x (minimo 2,89x) -- margem final estimada 11,3%, abaixo do piso de 20%. CTR da campanha em 0,26% (muito abaixo do padrao ML), causa ainda nao identificada. SKU Leitura +2,75 ficou sem estoque e virou Inativa, perdendo ~R$155 na semana. Night Drive segue saudavel e organico (R$1.359, 20 vendas, conversao 7,6%). Acao recomendada pelo Leo: reduzir orcamento da campanha Leitura e investigar CTR antes de escalar. Vera precisa definir: 1 decisao principal, plano de acao da semana, e o que NAO fazer.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura (campanha Ads) / Leitura +2,75 (estoque)",
+      "date": "2026-07-08",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
