@@ -1431,8 +1431,8 @@
     {
       "source": "agent",
       "id": 1783100000003,
-      "title": "Atualizar Bling: incluir SKU do Anuncio 3 (Leitura Kit Limpeza)",
-      "desc": "Depende do resultado do Bloco 2 (Nina) para regra de estoque. Cadastrar A3 no Bling com controle de estoque proprio.",
+      "title": "Bloco 2 (item 4): arrumar estoque geral no Bling + incluir SKU do Anuncio 3",
+      "desc": "Depende do resultado do Bloco 2 (Nina) para regra de estoque. Dois pontos: (1) revisar/arrumar cadastro de estoque geral no Bling para os SKUs ativos, (2) cadastrar o Anuncio 3 (Leitura Kit Limpeza) como novo SKU com controle proprio.",
       "agent": "Gabriel",
       "canal": "Mercado Livre",
       "anuncio": "Leitura A3",
@@ -1555,12 +1555,12 @@
     },
     {
       "id": 1783400000001,
-      "title": "Bloco 1: arrumar 5 catalogos do ML (Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue)",
-      "desc": "ML criou catalogos basicos automaticos para esses 5 SKUs (titulo generico, imagem unica, ficha tecnica incompleta). NAO apagar/pausar (pune ranking). Para cada um: (1) Maya/Nina verificam estado atual direto no painel ML, (2) classificar se precisa so ajuste rapido (titulo/ficha) ou galeria nova, (3) Sol corrige seguindo padrao ja validado no A1/A3 da Leitura.",
-      "agent": "Sol",
+      "title": "Bloco 1: confirmar cenario dos 5 catalogos criados pelo ML (Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue)",
+      "desc": "ALERTA DE CONSISTENCIA: o Diario (registro #001) tem regra estrategica de que todos os catalogos da Mooners foram desativados (marca propria com estoque exclusivo nao tem vantagem em catalogo compartilhado). Se o ML esta com catalogo nesses 5 SKUs, precisa confirmar qual cenario: (a) catalogos antigos que nunca foram de fato desativados, (b) ML forcando catalogo automatico por categoria (comum em oculos), ou (c) a regra mudou e regras-marketplaces.md nao foi atualizado. Checar direto no painel ML se sao catalogos de fato ou variacoes mal identificadas. NAO apagar/pausar em nenhuma hipotese (pune ranking). Esta tarefa PRECEDE a tarefa de arrumar os catalogos.",
+      "agent": "Nina",
       "canal": "Mercado Livre",
       "anuncio": "Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue",
-      "date": "2026-07-18",
+      "date": "2026-07-14",
       "priority": "normal",
       "status": "pending",
       "done": false,
@@ -1643,6 +1643,32 @@
       "status": "done",
       "done": true,
       "createdAt": "2026-07-06"
+    },
+    {
+      "id": 1783400000008,
+      "title": "Bloco 3 (item 7): arrumar os 5 catalogos do ML apos cenario confirmado",
+      "desc": "Depende da tarefa 'Bloco 1: confirmar cenario dos 5 catalogos' estar concluida. Para cada catalogo (Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue): elevar ao mesmo padrao de qualidade do A1/A3 da Leitura (titulo com keyword, imagens no padrao Mooners, ficha tecnica completa, descricao com FAQ). Nao precisa ser identico ao anuncio original, precisa atingir o mesmo nivel de qualidade.",
+      "agent": "Sol",
+      "canal": "Mercado Livre",
+      "anuncio": "Wayfarer, Crystal, NG-Crystal, Solar Black, Leitura Blue",
+      "date": "2026-07-21",
+      "priority": "normal",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": 1783400000009,
+      "title": "Afiliados Mercado Livre - nao aplicavel",
+      "desc": "Confirmado em regras-marketplaces.md: o Mercado Livre nao possui programa de afiliados externo para vendedores. Item removido do escopo — nao ha o que ativar aqui.",
+      "agent": "Vera",
+      "canal": "Mercado Livre",
+      "anuncio": "Geral",
+      "date": "2026-07-08",
+      "priority": "low",
+      "status": "cancelled",
+      "done": true,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
