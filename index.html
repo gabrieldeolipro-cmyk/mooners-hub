@@ -321,7 +321,7 @@ async function pushData(commitMessage) {
   syncing = true;
   setSyncStatus('sincronizando...', false);
   const body = {
-    tasks: tasks.map(({source, ...rest}) => rest),
+    tasks: tasks,
     contas,
     message: commitMessage || 'Atualização via Mooners Hub app'
   };
