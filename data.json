@@ -1791,6 +1791,20 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-08"
+    },
+    {
+      "source": "agent",
+      "id": 1783555753047,
+      "title": "Leo: raio-X do anúncio ativo no Shopee (com Ads)",
+      "desc": "Gabriel suspeita que o único anúncio Shopee com Ads/saída relevante pode estar deixando dinheiro na mesa (margem/ACOS/ROAS não verificados desde ativação). Não é abertura de Fase 2 (segue aguardando gatilho ~04/08) — é validação pontual do SKU campeão já em operação, mesmo princípio de 'validar 1 campeão antes de expandir'. Rodar veredito financeiro completo (fórmula Shopee: taxa por faixa de preço + R$4/R$16/R$20/R$26 fixo + imposto), funil (impressões/CTR/conversão/ROAS/ACOS) e checklist de estoque. Dados necessários: nome do anúncio/SKU, preço, vendas e faturamento recentes, investimento/ROAS/ACOS de Ads, estoque atual.",
+      "agent": "Leo",
+      "canal": "Shopee",
+      "anuncio": "A definir (único anúncio Shopee ativo com Ads)",
+      "date": "2026-07-10",
+      "priority": "urgent",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-08"
     }
   ],
   "contas": [
