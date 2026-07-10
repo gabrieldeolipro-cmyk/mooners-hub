@@ -431,7 +431,7 @@
       "date": "2026-07-09",
       "priority": "urgent",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
@@ -1859,5 +1859,5 @@
       "paga": false
     }
   ],
-  "lastUpdated": "2026-07-08"
+  "lastUpdated": "2026-07-10"
 }
