@@ -1805,6 +1805,20 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-08"
+    },
+    {
+      "source": "agent",
+      "id": 1783713448701,
+      "title": "Medir ACOS pós ajuste Meta ROAS Night Drive Shopee (4,3x -> 7,4x)",
+      "desc": "Leo diagnosticou ACOS real 26,93% (meta configurada estava em 4,3x, resultado 3,71x) vs ACOS maximo sustentavel 14,1% (margem antes de Ads 34,1%, piso 20%). Margem final real: 7,17% (Operacao em Risco). Gabriel ajustou a Meta de ROAS do GMV Max de 4,3x para 7,4x em 10/07/2026, orcamento diario mantido em R$35 (uma variavel por vez). Criterio de sucesso: ACOS <= 14-16% em 7 dias sem queda >20% no volume de itens vendidos via Ads. Criterio de parada: se ACOS nao cair apos 7 dias, investigar CPC de leilao em vez de recalibrar meta de novo.",
+      "agent": "Leo",
+      "canal": "Shopee",
+      "anuncio": "Oculos Night Drive Lente Amarela UV400 (ID 47057365731)",
+      "date": "2026-07-17",
+      "priority": "urgent",
+      "status": "waiting",
+      "done": false,
+      "createdAt": "2026-07-10"
     }
   ],
   "contas": [
