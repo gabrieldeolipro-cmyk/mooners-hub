@@ -1824,9 +1824,9 @@
       "tipo": "fixa",
       "valor": 349,
       "dia": 10,
-      "vence": "2026-07-10",
+      "vence": "2026-08-10",
       "obs": "Se cair em sáb/dom → próximo dia útil.",
-      "paga": false
+      "paga": true
     },
     {
       "id": 3,
