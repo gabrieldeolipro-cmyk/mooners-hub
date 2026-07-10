@@ -781,7 +781,7 @@
       "date": "2026-07-09",
       "priority": "normal",
       "status": "pending",
-      "done": true,
+      "done": false,
       "createdAt": "2026-07-02"
     },
     {
