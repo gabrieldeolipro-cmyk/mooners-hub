@@ -74,14 +74,14 @@
       "source": "agent",
       "id": 6,
       "title": "Medir desempenho Anúncio 3 Leitura + canibalização A1",
-      "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. Decidir sobre Ads no A3 com base nos dados.",
+      "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. RESULTADO (13/07/2026): A1 sem canibalização — subiu de 1,9 para 3,0 vendas/dia (+58%) no mesmo período. A3 com 0 vendas em 15 dias, mas SEM Ads ativo (instabilidade na plataforma ML impede criação de campanha; chamado aberto, em análise). Critérios de parada não se aplicam pois nunca houve teste de Ads real. Decisão: teste de Ads no A3 fica em espera — cronômetro (7/14 dias) reinicia somente quando a campanha for criada.",
       "agent": "Leo",
       "canal": "Mercado Livre",
       "anuncio": "Leitura — Anúncio 1 e Anúncio 3",
       "date": "2026-07-09",
       "priority": "normal",
       "status": "waiting",
-      "done": true,
+      "done": false,
       "createdAt": "2026-06-25"
     },
     {
@@ -1819,6 +1819,20 @@
       "status": "waiting",
       "done": false,
       "createdAt": "2026-07-10"
+    },
+    {
+      "source": "agent",
+      "id": 1783959274414,
+      "title": "Acompanhar chamado ML (instabilidade Ads) e reiniciar teste A3",
+      "desc": "Chamado aberto no Mercado Livre por instabilidade que impede criar campanha de Ads no Anúncio 3 (Leitura + Kit Limpeza, R$54,90). Assim que o chamado for resolvido e a campanha puder ser criada: reiniciar o teste de Ads no A3 do zero, com os critérios já definidos (≥3 vendas em 7 dias, CTR>2%, queda A1 ≤20% / parada: 0 vendas em 14 dias, queda A1 >30%). Até lá, não decidir nada sobre a oferta com o volume orgânico atual (11-19 visitas, amostra baixa demais).",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Leitura — Anúncio 3",
+      "date": "2026-07-20",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-13"
     }
   ],
   "contas": [
