@@ -74,14 +74,14 @@
       "source": "agent",
       "id": 6,
       "title": "Medir desempenho Anúncio 3 Leitura + canibalização A1",
-      "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. RESULTADO (13/07/2026): A1 sem canibalização — subiu de 1,9 para 3,0 vendas/dia (+58%) no mesmo período. A3 com 0 vendas em 15 dias, mas SEM Ads ativo (instabilidade na plataforma ML impede criação de campanha; chamado aberto, em análise). Critérios de parada não se aplicam pois nunca houve teste de Ads real. Decisão: teste de Ads no A3 fica em espera — cronômetro (7/14 dias) reinicia somente quando a campanha for criada.",
+      "desc": "Critérios de sucesso: ≥ 3 vendas A3 em 7 dias, CTR > 2%, queda A1 ≤ 20%. Critérios de parada: zero vendas A3 em 14 dias, queda A1 > 30%. Decidir sobre Ads no A3 com base nos dados.",
       "agent": "Leo",
       "canal": "Mercado Livre",
       "anuncio": "Leitura — Anúncio 1 e Anúncio 3",
       "date": "2026-07-09",
       "priority": "normal",
       "status": "waiting",
-      "done": false,
+      "done": true,
       "createdAt": "2026-06-25"
     },
     {
@@ -809,7 +809,7 @@
       "date": "2026-07-13",
       "priority": "normal",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
