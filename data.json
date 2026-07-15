@@ -1903,6 +1903,7 @@
       "done": false
     },
     {
+      "source": "manual",
       "id": 1784156554141,
       "title": "Reordenar capa e galeria do Solar Black",
       "desc": "Fase 2 do plano Vera. Nova ordem de galeria: 1) capa produto fundo branco 2) vídeo 3) kit completo aberto 4) detalhe da lente/armação 5) uso real/contexto 6) garantia 3 meses + selo Loja Oficial 7) FAQ visual 8) embalagem/envio. Testar variante de capa com estojo ao lado, mantendo produto a 95% do quadro. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
@@ -1910,6 +1911,18 @@
       "canal": "Mercado Livre",
       "anuncio": "Solar Black",
       "date": "2026-07-22",
+      "priority": "normal",
+      "status": "pending",
+      "done": false
+    },
+    {
+      "id": 1784156572927,
+      "title": "Medir resultado do reposicionamento do Solar Black",
+      "desc": "Checkpoint 14 dias apos titulo/capa/galeria novos. Baseline: 2 vendidos, 0 avaliacoes, preco real R$42,25, margem 31,9%. Comparar visitas, vendas e posicao na Analise de Mercado (subcategoria Oculos). Se sem melhora, acionar Maya para nova rodada de pesquisa. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "Solar Black",
+      "date": "2026-07-29",
       "priority": "normal",
       "status": "pending",
       "done": false,
