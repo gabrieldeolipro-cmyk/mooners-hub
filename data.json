@@ -1877,9 +1877,22 @@
       "createdAt": "2026-07-15"
     },
     {
+      "source": "manual",
       "id": 1784156486372,
       "title": "Validar catálogo e publicar novo título do Solar Black",
       "desc": "Confirmar no painel se o anúncio MLB6471460514 (Solar Black) está vinculado a catálogo compartilhado. Publicar novo título: 'Oculos De Sol Masculino Polarizado Uv400 Preto Mooners' (54 caracteres). Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026 (custo R$12,50, preço real R$42,25, margem 31,9%).",
+      "agent": "Sol",
+      "canal": "Mercado Livre",
+      "anuncio": "Solar Black",
+      "date": "2026-07-15",
+      "priority": "normal",
+      "status": "pending",
+      "done": false
+    },
+    {
+      "id": 1784156521383,
+      "title": "Colocar inserto pedindo avaliação no Solar Black",
+      "desc": "Anuncio MLB6471460514 está com 0 avaliações (JoomPulse), enquanto concorrentes diretos de preço parecido têm 309 a 5.554 avaliações. Incluir cartão/inserto pedindo avaliação em todo pedido enviado a partir de agora. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
       "agent": "Sol",
       "canal": "Mercado Livre",
       "anuncio": "Solar Black",
