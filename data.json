@@ -39,7 +39,7 @@
       "date": "2026-07-14",
       "priority": "normal",
       "status": "waiting",
-      "done": false,
+      "done": true,
       "createdAt": "2026-06-22"
     },
     {
