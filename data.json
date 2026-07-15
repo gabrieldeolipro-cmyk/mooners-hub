@@ -816,14 +816,14 @@
       "source": "agent",
       "id": 1783000000036,
       "title": "[ROTINA SEMANAL ML - QUA] Vera: decisão da semana",
-      "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer.",
+      "desc": "Com base no Leo de segunda: 1 decisão principal, plano da semana, o que NÃO fazer. [ATUALIZADO 15/07/2026: decisao = MANTER, nao escalar Ads na familia Leitura esta semana. Cobrar Maya (validacao preco Kit 3un, sem prazo) e acompanhar chamado ML (Unitario+Kit Limpeza). Ver Diario #023.]",
       "agent": "Vera",
       "canal": "Mercado Livre",
       "anuncio": "Todos",
       "date": "2026-07-15",
       "priority": "normal",
-      "status": "pending",
-      "done": false,
+      "status": "done",
+      "done": true,
       "createdAt": "2026-07-02"
     },
     {
