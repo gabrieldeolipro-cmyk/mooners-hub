@@ -1890,6 +1890,7 @@
       "done": false
     },
     {
+      "source": "manual",
       "id": 1784156521383,
       "title": "Colocar inserto pedindo avaliação no Solar Black",
       "desc": "Anuncio MLB6471460514 está com 0 avaliações (JoomPulse), enquanto concorrentes diretos de preço parecido têm 309 a 5.554 avaliações. Incluir cartão/inserto pedindo avaliação em todo pedido enviado a partir de agora. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
@@ -1897,6 +1898,18 @@
       "canal": "Mercado Livre",
       "anuncio": "Solar Black",
       "date": "2026-07-15",
+      "priority": "normal",
+      "status": "pending",
+      "done": false
+    },
+    {
+      "id": 1784156554141,
+      "title": "Reordenar capa e galeria do Solar Black",
+      "desc": "Fase 2 do plano Vera. Nova ordem de galeria: 1) capa produto fundo branco 2) vídeo 3) kit completo aberto 4) detalhe da lente/armação 5) uso real/contexto 6) garantia 3 meses + selo Loja Oficial 7) FAQ visual 8) embalagem/envio. Testar variante de capa com estojo ao lado, mantendo produto a 95% do quadro. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
+      "agent": "Sol",
+      "canal": "Mercado Livre",
+      "anuncio": "Solar Black",
+      "date": "2026-07-22",
       "priority": "normal",
       "status": "pending",
       "done": false,
