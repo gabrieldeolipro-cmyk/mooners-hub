@@ -1579,7 +1579,7 @@
       "date": "2026-07-10",
       "priority": "urgent",
       "status": "pending",
-      "done": true,
+      "done": false,
       "createdAt": "2026-07-08"
     },
     {
@@ -1747,7 +1747,7 @@
       "date": "2026-07-10",
       "priority": "urgent",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-08"
     },
     {
