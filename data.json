@@ -1927,6 +1927,34 @@
       "priority": "normal",
       "status": "pending",
       "done": false
+    },
+    {
+      "source": "manual",
+      "id": 1784232026901,
+      "title": "Fotos para biblioteca de marca da Mooners",
+      "desc": "Sessão de fotos para construir a biblioteca de imagens de marca (brand library) da Mooners. Cobrir produtos, lifestyle e materiais que servirão de base para o Brand Book / Visual System.",
+      "agent": "Sol",
+      "canal": "Geral",
+      "anuncio": "Biblioteca de Marca — Mooners",
+      "date": "2026-07-20",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-16"
+    },
+    {
+      "source": "manual",
+      "id": 1784232026902,
+      "title": "Criação do Brand Book (Mooners Visual System)",
+      "desc": "Construir o Brand Book da Mooners: sistema visual (logo, cores, tipografia, grid de fotos, tom de voz visual). Depende das fotos da biblioteca de marca para compor os exemplos.",
+      "agent": "Sol",
+      "canal": "Geral",
+      "anuncio": "Brand Book — Mooners Visual System",
+      "date": "2026-07-20",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "createdAt": "2026-07-16"
     }
   ],
   "contas": [
