@@ -1579,7 +1579,7 @@
       "date": "2026-07-10",
       "priority": "urgent",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-08"
     },
     {
@@ -1916,6 +1916,7 @@
       "done": false
     },
     {
+      "source": "manual",
       "id": 1784156572927,
       "title": "Medir resultado do reposicionamento do Solar Black",
       "desc": "Checkpoint 14 dias apos titulo/capa/galeria novos. Baseline: 2 vendidos, 0 avaliacoes, preco real R$42,25, margem 31,9%. Comparar visitas, vendas e posicao na Analise de Mercado (subcategoria Oculos). Se sem melhora, acionar Maya para nova rodada de pesquisa. Fonte: pesquisa Maya/Leo/Vera/Sol de 15/07/2026.",
@@ -1925,8 +1926,7 @@
       "date": "2026-07-29",
       "priority": "normal",
       "status": "pending",
-      "done": false,
-      "source": "manual"
+      "done": false
     }
   ],
   "contas": [
@@ -1981,5 +1981,5 @@
       "paga": false
     }
   ],
-  "lastUpdated": "2026-07-15"
+  "lastUpdated": "2026-07-16"
 }
