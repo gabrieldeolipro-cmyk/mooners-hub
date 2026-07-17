@@ -1663,7 +1663,7 @@
       "date": "2026-07-11",
       "priority": "urgent",
       "status": "pending",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-08"
     },
     {
