@@ -1887,7 +1887,7 @@
       "date": "2026-07-15",
       "priority": "normal",
       "status": "pending",
-      "done": true
+      "done": false
     },
     {
       "source": "manual",
@@ -1955,6 +1955,19 @@
       "status": "pending",
       "done": false,
       "createdAt": "2026-07-16"
+    },
+    {
+      "id": 1784330183000,
+      "title": "Analisar porque Solar Way não vende e corrigir",
+      "desc": "",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "solarway",
+      "date": "2026-07-20",
+      "priority": "normal",
+      "status": "pending",
+      "done": false,
+      "source": "manual"
     }
   ],
   "contas": [
