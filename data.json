@@ -1970,6 +1970,7 @@
       "done": false
     },
     {
+      "source": "manual",
       "id": 1784330257219,
       "title": "Analisar metricas pós alteracao sku solar-blackedtion",
       "desc": "Analisar pelas metrica se é necessario mudança de capa, ou outra coisa enfim ver como performou e se precisa fazer algo",
@@ -1979,8 +1980,7 @@
       "date": "2026-07-22",
       "priority": "normal",
       "status": "pending",
-      "done": false,
-      "source": "manual"
+      "done": false
     }
   ],
   "contas": [
@@ -1990,9 +1990,9 @@
       "tipo": "fixa",
       "valor": 200,
       "dia": 15,
-      "vence": "2026-07-15",
+      "vence": "2026-08-15",
       "obs": "Plano Crescimento. Se cair em sáb/dom → próximo dia útil.",
-      "paga": false
+      "paga": true
     },
     {
       "id": 2,
