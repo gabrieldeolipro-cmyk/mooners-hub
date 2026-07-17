@@ -1957,6 +1957,7 @@
       "createdAt": "2026-07-16"
     },
     {
+      "source": "manual",
       "id": 1784330183000,
       "title": "Analisar porque Solar Way não vende e corrigir",
       "desc": "",
@@ -1964,6 +1965,18 @@
       "canal": "Mercado Livre",
       "anuncio": "solarway",
       "date": "2026-07-20",
+      "priority": "normal",
+      "status": "pending",
+      "done": false
+    },
+    {
+      "id": 1784330257219,
+      "title": "Analisar metricas pós alteracao sku solar-blackedtion",
+      "desc": "Analisar pelas metrica se é necessario mudança de capa, ou outra coisa enfim ver como performou e se precisa fazer algo",
+      "agent": "Leo",
+      "canal": "Mercado Livre",
+      "anuncio": "",
+      "date": "2026-07-22",
       "priority": "normal",
       "status": "pending",
       "done": false,
