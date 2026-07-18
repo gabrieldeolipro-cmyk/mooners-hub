@@ -1817,7 +1817,7 @@
       "date": "2026-07-17",
       "priority": "urgent",
       "status": "waiting",
-      "done": false,
+      "done": true,
       "createdAt": "2026-07-10"
     },
     {
